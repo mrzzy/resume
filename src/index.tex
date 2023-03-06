@@ -3,21 +3,41 @@
 % Contents
 %
 
+
 % Header
 \fancyhead{} % clear default header
-\fancyhead[C]{\LARGE{\textbf{Zhu Zhanyan}}}
-\fancyhead[L]{mrzzy.dev@gmail.com \\ +65 8838 5198}
+
+\fancyhead[C]{\Large{\textbf{Zhu Zhanyan}}\\
+              \normalsize{Data Engineer}}
+\fancyhead[L]{\href{mailto:mrzzy.dev@gmail.com}{mrzzy.dev@gmail.com}\\}
 \fancyhead[R]{
   \href{https://github.com/mrzzy}{github.com/mrzzy} \\
   \href{https://linkedin.com/in/zhu-zhanyan}{linkedin.com/in/zhu-zhanyan}%
 }
 
 \section{Experience}
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+% \experience{title}{organisation}{start date}{end date}
+% Generate a experience sub-section header.
+\NewDocumentCommand{\experience}{mmmm}{\subsection{#1 \textnormal{#2 \hfill #3 - #4}}}
+
+% NOTE: describe experience & projects in terms of Internship Search sheet > Role
+
+\experience{Admin Support Assistant}{SAF}{May 2020}{May 2022}
+% TODO: powerbi, access, powerquery automation
+\experience{ML Engineer Intern}{Gojek}{Mar 2020}{Oct 2020}
+% TODO: python, java, golang, open source, beam stream processing, test development
+% identified redis bug https://github.com/feast-dev/feast/pull/908
+\experience{Software Engineer Intern}{Tinkertanker}{Jan 2018}{Apr 2018}
+% TODO ci/cd
+
 \section{Projects}
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+% TODO: sortin hat: airflow, cloud storage, distributed/cluster computing, ML  & system design
+% TODO: warp / nimbus: ansible, terraform, vagrant, packer, GCP, nginx
+  
 \section{Education}
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+% TODO: gpa, capstone, cloud
+
 \section{Skills}
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+% TODO: list Internship Search sheet > Skills for ATS keyword optimizatoin
 
