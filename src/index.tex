@@ -22,22 +22,51 @@
 \NewDocumentCommand{\experience}{mmmm}{\subsection{#1 \textnormal{#2 \hfill #3 - #4}}}
 
 % NOTE: describe experience & projects in terms of Internship Search sheet > Role
+% format: action, accomplishment, results. concise short sentence fragments
+% softskills: problem-solving, analytical, communication, teamwork, self-directe
 
 \experience{Admin Support Assistant}{SAF}{May 2020}{May 2022}
+  % TODO: powerbi
+  % TODO: ORD T&T
+  % TODO: qliksense
+  % TODO: outpro
+
 % TODO: powerbi, access, powerquery automation
 \experience{ML Engineer Intern}{Gojek}{Mar 2020}{Oct 2020}
-% TODO: python, java, golang, open source, beam stream processing, test development
+% TODO: python, java, golang, open source, beam stream processing, e2e testing
+\begin{itemize}
+  \item Contributed ODIC based access control to the Feast's Java \& Golang
+    SDKs, enhancing data security without latency penality on critical paths.
+  \item Reworked Feast's position-based encoding on Redis into a key-based encoding 
+    paving the way for for schema evolution.
+  \item Created tool to generate Alertmanager Alerts to monitor Data Quality,
+    freeing Data Science focus on modeling instead of Ops.
+  \item Visualised Feast usage metrics from BigQuery Data Warehouse in Grafana dashboard
+     which aided the project manager \& technical leads in their decision making, prioritisation.
+  \item Wrote technical documentation for Feast, allowing core engineers to 
+    focus on development instead of helpdesk support.
+  \item Advocated for API stabilty so that downstream applications do not constantly
+    have to reworked to be compatible.
+\end{itemize}
+
 % identified redis bug https://github.com/feast-dev/feast/pull/908
 \experience{Software Engineer Intern}{Tinkertanker}{Jan 2018}{Apr 2018}
-% TODO ci/cd
+\begin{itemize}
+  \item Developed Tinkertanker's internal instructor, course
+    management system with Python, Django \& PostgreSQL. Replaced previous
+    system based on Google Sheets which was no longer scalable.
+  \item Wrote GitHub Actions CI/CD pipeline to continuous lint, test codebase
+    \& build docker containers to accelerate deployment.
+  \item Refactored code using SOLID principles to cut through techdebt that
+    bogged down developer productivity.
+\end{itemize}
 
 \section{Projects}
-% TODO: sortin hat: airflow, cloud storage, distributed/cluster computing, ML  & system design
+% TODO: sortin hat: airflow, cloud storage, distributed/cluster computing with ray, ML  & system design
 % TODO: warp / nimbus: ansible, terraform, vagrant, packer, GCP, nginx
   
 \section{Education}
 % TODO: gpa, capstone, cloud
 
 \section{Skills}
-% TODO: list Internship Search sheet > Skills for ATS keyword optimizatoin
-
+% TODO: list Internship Search sheet > Skills for ATS keyword optimization
