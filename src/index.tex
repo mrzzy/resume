@@ -15,58 +15,109 @@
   \href{https://linkedin.com/in/zhu-zhanyan}{linkedin.com/in/zhu-zhanyan}%
 }
 
+% Summary
+Data Engineer with a Software Engineering \& DevOps background.
+
 \section{Experience}
-
-% \experience{title}{organisation}{start date}{end date}
-% Generate a experience sub-section header.
-\NewDocumentCommand{\experience}{mmmm}{\subsection{#1 \textnormal{#2 \hfill #3 - #4}}}
-
-% NOTE: describe experience & projects in terms of Internship Search sheet > Role
 % format: action, accomplishment, results. concise short sentence fragments
-% softskills: problem-solving, analytical, communication, teamwork, self-directe
-
+% soft-skills: problem-solving, analytical, communication, teamwork, self-directed
 \experience{Admin Support Assistant}{SAF}{May 2020}{May 2022}
-  % TODO: powerbi
-  % TODO: ORD T&T
-  % TODO: qliksense
-  % TODO: outpro
-
-% TODO: powerbi, access, powerquery automation
-\experience{ML Engineer Intern}{Gojek}{Mar 2020}{Oct 2020}
-% TODO: python, java, golang, open source, beam stream processing, e2e testing
 \begin{itemize}
-  \item Contributed ODIC based access control to the Feast's Java \& Golang
-    SDKs, enhancing data security without latency penality on critical paths.
-  \item Reworked Feast's position-based encoding on Redis into a key-based encoding 
-    paving the way for for schema evolution.
-  \item Created tool to generate Alertmanager Alerts to monitor Data Quality,
-    freeing Data Science focus on modeling instead of Ops.
-  \item Visualised Feast usage metrics from BigQuery Data Warehouse in Grafana dashboard
-     which aided the project manager \& technical leads in their decision making, prioritisation.
-  \item Wrote technical documentation for Feast, allowing core engineers to 
-    focus on development instead of helpdesk support.
-  \item Advocated for API stabilty so that downstream applications do not constantly
-    have to reworked to be compatible.
+  % skills: PowerBI, ETL, Data Visualisation, Data Analysis?
+  % soft-skills: problem-solving, analytical, self-driven
+  \item Automated employee well-being interviews as part of self-driven project by
+    building a PowerBI Dashboard with a PowerQuery M ETL \& DAX formulas. Saved man hours
+    in manual interview tracking in Excel \& drove interview lapses down below KPI targets.
+
+  % skills: PowerBI, DAX, PowerQuery
+  % soft-skills: problem-solving, self-driven
+  \item Implemented ORD Transcript Templater with MS Access, VBA \& SQL to as part
+    of a self-driven initiative to streamline the prior copy \& pasting workflow.
+    Templater was instrumental in helping 1 clerk to cope with spike of $\sim$ 
+    70 transcripts requested in Nov 2021.
+
+  % skills: Qliksense, Data Analysis, Data Visualisation
+  % soft-skills: communication
+  \item Performed data analysis \& on an internal Call Center datasetwith
+    with Qliksense. Made recommendations in Call Center vendor monitoring 
+    conveyed in presentation built on Data Visualisation \& Storytelling techniques.
 \end{itemize}
 
-% identified redis bug https://github.com/feast-dev/feast/pull/908
+\experience{ML Engineer Intern}{Gojek}{Mar 2020}{Oct 2020}
+\begin{itemize}
+  % skills: Software Engineering, Security, ODIC, Java, Golang, Performanace
+  \item Made 43 contributions \footnote{https://github.com/feast-dev/feast/commits?author=mrzzy} 
+    to the Feast open source project, including ODIC based access control to the Feast's Java 
+    \& Golang SDKs, enhancing data security without latency penalty on critical paths.
+
+  % skills: Redis, Protobuf
+  % soft-skills: problem-solving, analytical
+  \item Identified root cause of decoding error when with serving data from Redis.
+    Fixed issue by replacing Protobuf position-based encoding with key-based encoding
+    \footnote{https://github.com/feast-dev/feast/pull/908}.
+
+  % skills: Prometheus, Data Quality, DevOps
+  % soft-skills: teamwork
+  \item Created tool to generate Prometheus Alerts to monitor Data Quality,
+    allowing Data Scientists focus on ML instead of DevOps.
+
+  % skills: Data Visualisation, Grafana, BigQuery, SQL
+  % soft-skills: teamwork
+  \item Visualised Feast usage metrics queried BigQuery Data Warehouse with SQL 
+    in a Grafana dashboard. Aided the project manager \& technical leads in their decision making.
+
+  % soft-skills: leadership, teamwork
+  \item Advocated for API stability so that dependent applications do not constantly
+    have to reworked, freeing up engineering time from patching incompatibility issues.
+\end{itemize}
+
 \experience{Software Engineer Intern}{Tinkertanker}{Jan 2018}{Apr 2018}
 \begin{itemize}
-  \item Developed Tinkertanker's internal instructor, course
-    management system with Python, Django \& PostgreSQL. Replaced previous
-    system based on Google Sheets which was no longer scalable.
+  % skills: Software Engineering
+  \item Developed Tinkertanker's internal employee allocation system with 
+    Python, Django \& PostgreSQL that replaced prior Google Sheets system 
+    which had performance issues.
+  % skills: GitHub Actions, CI/CD, SOftware Testing, Docker, Containers
   \item Wrote GitHub Actions CI/CD pipeline to continuous lint, test codebase
     \& build docker containers to accelerate deployment.
+  % skills: Refactoring
   \item Refactored code using SOLID principles to cut through techdebt that
     bogged down developer productivity.
 \end{itemize}
 
 \section{Projects}
-% TODO: sortin hat: airflow, cloud storage, distributed/cluster computing with ray, ML  & system design
-% TODO: warp / nimbus: ansible, terraform, vagrant, packer, GCP, nginx
+% skills: airflow, cloud computing, distributed computing, Ray, ML, System Design
+\project{Sortin Hat}{github.com/mrzzy/sortin-hat}
+\begin{itemize}
+  \item Implemented an Airflow ML Pipeline that's trains models to predict student scores
+    to facilitate academic target setting.
+  \item Wrote Pandas ETL to clean \& transform Excel sheets into ML model features.
+  \item Parallelised hyperparameter tuning on distributed Ray Cluster provisioned on-demand.
+  \item Designed cloud native architecture with Kubernetes (GKE) \& Object Storage (GCS).
+\end{itemize}
+
+% skills: ansible, terraform, vagrant, packer, GCP, DevOps
+\project{WARP}{github.com/mrzzy/warp}
+\begin{itemize}
+  \item Created a web or SSH accessible development environment in a GCP VM,
+    built with Terraform, Ansible, Vagrant, Packer.
+  \item Ansible playbook provides a single source of truth of tools \& their versions,
+    enforcing consistency between WARP VM \& Laptop, allowing for reproduceable code builds.
+  \item Automated dependency upgrades with Renovate.
+\end{itemize}
   
 \section{Education}
-% TODO: gpa, capstone, cloud
+\experience{Diploma in Information Technology}{Ngee Ann Polytechnic}{Apr 2018}{Apr 2021}
+\begin{itemize}
+  \item SGD Scholarship recipient (2018). GPA: 3.82.
+  \item Organized workshops on ML and Cloud Computing for 20 pax in tech-interest club.
+\end{itemize}
 
 \section{Skills}
-% TODO: list Internship Search sheet > Skills for ATS keyword optimization
+\begin{description}
+  \footnotesize{
+  \item[Technical] Python, SQL, Java, Golang, GCP, BigQuery, AWS, S3, Spark, DBT, Airflow, Kubernetes, Docker, Pandas, Data Modeling, Kimball, Data Visualisation, Data Analysis, Data Quality, Data Warehouse, Data Lake, ETL, Software Enginering, TDD, FP, OOP, Redis, PostgreSQL
+  \item[People]
+    Self Driven, Self Starter, Problem Solving, Analytical, Team Player, Ambitious, Curious, Good communication skills
+  }
+\end{description}
