@@ -1,0 +1,39 @@
+#
+# Resume
+# CI Pipeline
+#
+
+on:
+  push:
+    branches:
+      # generic resume
+      - main
+      - "feat/*"
+    tags: ["*"]
+jobs:
+  typeset-resume:
+    runs-on: ubuntu-22.04
+    name: Typeset Resume with Tectonic
+    steps:
+    - uses: actions/checkout@v3
+    - uses: WtfJoke/setup-tectonic@v2.1.0
+      with:
+        # needed for querying tectonic releases from github
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        tectonic-version: 0.12.0
+    - name: Build Resume PDF
+      run: |
+        set -ex
+        tectonic -X build
+        # rename resume file based on pushed ref.
+        # sed: strip prefix (eg. 'feat/') if any and replace filename unfriendly characters
+        RESUME_PDF= "zhu_zhanyan_resume_$(
+          printf ${{ github.ref_name }} | 
+          sed -e 's|[[:alpha:]]+/||g; s|[/-]|_|g').pdf"
+        mv build/resume/resume.pdf ${RESUME_PDF}
+        echo "RESUME_PDF=${RESUME_PDF}" >> $GITHUB_ENV
+    - name: Upload built PDF as Github Actions Artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: "Resume PDF"
+        path: "${{ env.RESUME_PDF }}"
