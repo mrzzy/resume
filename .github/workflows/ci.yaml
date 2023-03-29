@@ -5,10 +5,7 @@
 
 on:
   push:
-    branches:
-      # generic resume
-      - main
-      - "feat/*"
+    branches: ["*"]
     tags: ["*"]
 jobs:
   typeset-resume:
