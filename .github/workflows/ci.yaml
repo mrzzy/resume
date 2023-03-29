@@ -10,7 +10,7 @@ on:
 jobs:
   typeset-resume:
     runs-on: ubuntu-22.04
-    name: Typeset Resume with Tectonic
+    name: Typeset Resume PDF
     steps:
     - uses: actions/checkout@v3
     - uses: WtfJoke/setup-tectonic@v2.1.0
@@ -34,3 +34,13 @@ jobs:
       with:
         name: "Resume PDF"
         path: "${{ env.RESUME_PDF }}"
+  
+  spellcheck:
+    name: Spellcheck Resume
+    runs-on: ubuntu-22.04
+    steps:
+    - uses: actions/checkout@v3
+    - name: Install codespell with Pip
+      run: pip install -r requirements.txt
+    - name: Perform spellcheck with codespell
+      run: codespell
