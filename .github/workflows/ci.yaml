@@ -45,7 +45,6 @@ jobs:
         working-directory: assets/previews
     env:
       RESUME_PDF: "${{ needs.preview-resume.outputs.resume_pdf }}"
-    
     permissions:
       # needed for github-auto-commit-action to commit to repo.
       contents: write
@@ -60,8 +59,9 @@ jobs:
       - name: Generate PNG preview from PDF
         run: |
           set -ex -o pipefail
-          pdftoppm -png "${RESUME_PDF}" "$(basename ${RESUME_PDF})"
-          echo "RESUME_PNG=$(printf ${RESUME_PDF} | sed -e 's/.pdf/-1.png')" >> $GITHUB_ENV
+          RESUME_BASE="$(basename ${{ env.RESUME_PDF }} .pdf)"
+          pdftoppm -png "${{ env.RESUME_PDF }}"  "${RESUME_BASE}"
+          echo "RESUME_PNG=${RESUME_BASE}-1.png" >> $GITHUB_ENV
       - name: Push Resume PNG preview to Github Pages
         uses: stefanzweifel/git-auto-commit-action@v4.16.0
         with:
