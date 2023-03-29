@@ -60,8 +60,8 @@ jobs:
         run: |
           set -ex -o pipefail
           sudo apt-get install pdftoppm
-          RESUME_BASE="$(basename ${{ env.RESUME_PDF }} .pdf)"
-          pdftoppm -png "${{ env.RESUME_PDF }}"  "${RESUME_BASE}"
+          RESUME_BASE="$(basename ${RESUME_PDF} .pdf)"
+          pdftoppm -png "${RESUME_PDF}" "${RESUME_BASE}"
           echo "RESUME_PNG=${RESUME_BASE}-1.png" >> $GITHUB_ENV
       - name: Push Resume PNG preview to Github Pages
         uses: stefanzweifel/git-auto-commit-action@v4.16.0
