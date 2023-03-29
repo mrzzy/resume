@@ -9,6 +9,8 @@ jobs:
   typeset-resume:
     name: Typeset Resume PDF
     runs-on: ubuntu-22.04
+    outputs:
+      resume_pdf: "${{ steps.filename.outputs.resume_pdf }}"
     steps:
     - uses: actions/checkout@v3
     - uses: WtfJoke/setup-tectonic@v2.1.0
@@ -20,27 +22,41 @@ jobs:
       run: |
         tectonic -X build
     - name: Derive Resume filename
+      id: filename
       run: |
         set -ex -o pipefail
         # sed: strip prefix (eg. 'feat/') if any and replace filename unfriendly characters
         REF_SUFFIX="$(printf ${{ github.ref_name }} | sed -Ee 's|[[:alpha:]]+/||g; s|[/-]|_|g')"
         # rename resume file based on pushed ref.
         RESUME_PDF="zhu_zhanyan_resume_${REF_SUFFIX}.pdf"
-        echo "RESUME_PDF=${RESUME_PDF}" >> $GITHUB_ENV
+        echo "resume_pdf=${RESUME_PDF}" >> "$GITHUB_OUTPUT"
     - name: Upload built PDF as Github Actions Artifact
       uses: actions/upload-artifact@v3
       with:
-        name: "${{ env.RESUME_PDF }}"
+        name: "${{ steps.filename.outputs.resume_pdf }}"
         path: build/resume/resume.pdf
   
   preview-resume:
     name: Generate Resume Preview
     runs-on: ubuntu-22.04
     needs: typeset-resume
+    defaults:
+      run:
+        working-directory: assets/previews
+    env:
+      RESUME_PDF: "${{ needs.preview-resume.outputs.resume_pdf }}"
+    
+    permissions:
+      # needed for github-auto-commit-action to commit to repo.
+      contents: write
     steps:
       - uses: actions/checkout@v3
         with:
           ref: gh-pages
+      - name: Download Resume PDF
+        uses: actions/download-artifact@v3
+        with:
+          name: "${{ env.RESUME_PDF }}"
       - name: Generate PNG preview from PDF
         run: |
           set -ex -o pipefail
@@ -49,7 +65,7 @@ jobs:
       - name: Push Resume PNG preview to Github Pages
         uses: stefanzweifel/git-auto-commit-action@v4.16.0
         with:
-          file_pattern: ${{ env.RESUME_PNG }}
+          file_pattern: assets/previews/${{ env.RESUME_PNG }}
           commit_message: "chore: add/update resume preview for ${{ github.ref }}"
   
   spellcheck:
