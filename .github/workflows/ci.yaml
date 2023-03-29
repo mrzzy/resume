@@ -59,7 +59,9 @@ jobs:
       - name: Generate PNG preview from PDF
         run: |
           set -ex -o pipefail
-          sudo apt-get install pdftoppm
+          # install pdftoppm
+          sudo apt-get install poppler-utils 
+          # generate png preview
           RESUME_BASE="$(basename ${RESUME_PDF} .pdf)"
           pdftoppm -png "${RESUME_PDF}" "${RESUME_BASE}"
           echo "RESUME_PNG=${RESUME_BASE}-1.png" >> $GITHUB_ENV
