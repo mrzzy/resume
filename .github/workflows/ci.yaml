@@ -20,12 +20,11 @@ jobs:
       run: |
         set -ex
         tectonic -X build
-        # rename resume file based on pushed ref.
         # sed: strip prefix (eg. 'feat/') if any and replace filename unfriendly characters
-        RESUME_PDF= "zhu_zhanyan_resume_$(
-          printf ${{ github.ref_name }} | 
-          sed -e 's|[[:alpha:]]+/||g; s|[/-]|_|g').pdf"
-        mv build/resume/resume.pdf ${RESUME_PDF}
+        REF_SUFFIX="$(printf ${{ github.ref_name }} | sed -Ee 's|[[:alpha:]]+/||g; s|[/-]|_|g')"
+        # rename resume file based on pushed ref.
+        RESUME_PDF="zhu_zhanyan_resume_${REF_SUFFIX}.pdf"
+        mv build/resume/resume.pdf "${RESUME_PDF}"
         echo "RESUME_PDF=${RESUME_PDF}" >> $GITHUB_ENV
     - name: Upload built PDF as Github Actions Artifact
       uses: actions/upload-artifact@v3
