@@ -40,9 +40,6 @@ jobs:
     name: Generate Resume Preview
     runs-on: ubuntu-22.04
     needs: typeset-resume
-    defaults:
-      run:
-        working-directory: assets/previews
     env:
       RESUME_PDF: "${{ needs.preview-resume.outputs.resume_pdf }}"
     permissions:
@@ -52,18 +49,21 @@ jobs:
       - uses: actions/checkout@v3
         with:
           ref: gh-pages
-      - name: Download Resume PDF
+      - id: download
+        name: Download Resume PDF
         uses: actions/download-artifact@v3
         with:
           name: "${{ env.RESUME_PDF }}"
+          path: .
       - name: Generate PNG preview from PDF
         run: |
           set -ex -o pipefail
           # install pdftoppm
           sudo apt-get install poppler-utils 
           # generate png preview
-          RESUME_BASE="$(basename ${{ env.RESUME_PDF }} .pdf)"
-          pdftoppm -png "${{ env.RESUME_PDF }}" "${RESUME_BASE}"
+          RESUME_BASE=$(printf ${RESUME_PDF} | sed -e 's/.pdf//')
+          pdftoppm -png "${{ steps.download.outputs.download-path }}/resume.pdf" ${RESUME_BASE}
+          mv ${RESUME_PNG} -t assets/previews/
           echo "RESUME_PNG=${RESUME_BASE}-1.png" >> $GITHUB_ENV
       - name: Push Resume PNG preview to Github Pages
         uses: stefanzweifel/git-auto-commit-action@v4.16.0
