@@ -24,7 +24,7 @@ jobs:
     - name: Derive Resume filename
       id: filename
       run: |
-        set -ex -o pipefail
+        set -eo pipefail
         # sed: strip prefix (eg. 'feat/') if any and replace filename unfriendly characters
         REF_SUFFIX="$(printf ${{ github.ref_name }} | sed -Ee 's|[[:alpha:]]+/||g; s|[/-]|_|g')"
         # rename resume file based on pushed ref.
@@ -58,7 +58,7 @@ jobs:
           name: "${{ env.RESUME_PDF }}"
       - name: Generate PNG preview from PDF
         run: |
-          set -ex -o pipefail
+          set -eo pipefail
           # install pdftoppm
           sudo apt-get install poppler-utils 
           # generate png preview
