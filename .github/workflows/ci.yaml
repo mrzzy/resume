@@ -7,8 +7,8 @@ on:
   push: {}
 jobs:
   typeset-resume:
-    runs-on: ubuntu-22.04
     name: Typeset Resume PDF
+    runs-on: ubuntu-22.04
     steps:
     - uses: actions/checkout@v3
     - uses: WtfJoke/setup-tectonic@v2.1.0
@@ -32,6 +32,25 @@ jobs:
       with:
         name: "${{ env.RESUME_PDF }}"
         path: build/resume/resume.pdf
+  
+  preview-resume:
+    name: Generate Resume Preview
+    runs-on: ubuntu-22.04
+    needs: typeset-resume
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: gh-pages
+      - name: Generate PNG preview from PDF
+        run: |
+          set -ex -o pipefail
+          pdftoppm -png "${RESUME_PDF}" "$(basename ${RESUME_PDF})"
+          echo "RESUME_PNG=$(printf ${RESUME_PDF} | sed -e 's/.pdf/-1.png')" >> $GITHUB_ENV
+      - name: Push Resume PNG preview to Github Pages
+        uses: stefanzweifel/git-auto-commit-action@v4.16.0
+        with:
+          file_pattern: ${{ env.RESUME_PNG }}
+          commit_message: "chore: add/update resume preview for ${{ github.ref }}"
   
   spellcheck:
     name: Spellcheck Resume
