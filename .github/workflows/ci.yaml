@@ -1,0 +1,86 @@
+#
+# Resume
+# CI Pipeline
+#
+
+on:
+  push: {}
+env:
+  # sed pattern: strip ref prefix (eg. 'feat/') if any and replace filename unfriendly characters
+  REF_SUFFIX_PATTERN: "s|[-_[:alpha:]]+/||g; s|[/-]|_|g"
+jobs:
+  typeset-resume:
+    name: Typeset Resume PDF
+    runs-on: ubuntu-22.04
+    outputs:
+      resume_pdf: "${{ steps.filename.outputs.resume_pdf }}"
+    steps:
+    - uses: actions/checkout@v3
+    - uses: WtfJoke/setup-tectonic@v2.1.0
+      with:
+        # needed for querying tectonic releases from github
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        tectonic-version: 0.12.0
+    - name: Cache Tectonic CTAN packages
+      uses: actions/cache@v3
+      with:
+        path: ~/.cache/Tectonic
+        key: tectonic-${{ hashFiles('**/*.tex') }}
+        restore-keys: tectonic-
+    - name: Build Resume PDF
+      run: |
+        tectonic -X build
+    - name: Derive Resume filename
+      id: filename
+      run: |
+        set -ex -o pipefail
+        REF_SUFFIX=$(printf ${{ github.ref_name }} | sed -Ee "${REF_SUFFIX_PATTERN}")
+        # rename resume file based on pushed ref.
+        RESUME_PDF="zhu_zhanyan_resume_${REF_SUFFIX}.pdf"
+        echo "resume_pdf=${RESUME_PDF}" >> "$GITHUB_OUTPUT"
+    - name: Upload built PDF as Github Actions Artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: "${{ steps.filename.outputs.resume_pdf }}"
+        path: build/resume/resume.pdf
+  
+  preview-resume:
+    name: Generate Resume Preview
+    runs-on: ubuntu-22.04
+    needs: typeset-resume
+    permissions:
+      # needed for github-auto-commit-action to commit to repo.
+      contents: write
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: gh-pages
+      - id: download
+        name: Download Resume PDF
+        uses: actions/download-artifact@v3
+        with:
+          name: "${{ needs.preview-resume.outputs.resume_pdf }}"
+      - name: Generate PNG preview from PDF
+        run: |
+          set -ex -o pipefail
+          # install pdftoppm
+          sudo apt-get install poppler-utils 
+          # generate png preview
+          REF_SUFFIX=$(printf ${{ github.ref_name }} | sed -Ee "${REF_SUFFIX_PATTERN}")
+          pdftoppm -png *.pdf/resume.pdf "${REF_SUFFIX}"
+          mv "${REF_SUFFIX}-1.png" -t assets/previews/
+      - name: Push Resume PNG preview to Github Pages
+        uses: stefanzweifel/git-auto-commit-action@v4.16.0
+        with:
+          file_pattern: "assets/previews/*.png"
+          commit_message: "chore: add/update resume preview for ${{ github.ref }}"
+  
+  spellcheck:
+    name: Spellcheck Resume
+    runs-on: ubuntu-22.04
+    steps:
+    - uses: actions/checkout@v3
+    - name: Install codespell with Pip
+      run: pip install -r requirements.txt
+    - name: Perform spellcheck with codespell
+      run: codespell
