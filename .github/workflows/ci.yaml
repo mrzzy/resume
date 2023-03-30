@@ -7,7 +7,7 @@ on:
   push: {}
 env:
   # sed pattern: strip ref prefix (eg. 'feat/') if any and replace filename unfriendly characters
-  REF_SUFFIX_PATTERN: "s|[[:alpha:]]+/||g; s|[/-]|_|g"
+  REF_SUFFIX_PATTERN: "s|[-_[:alpha:]]+/||g; s|[/-]|_|g"
 jobs:
   typeset-resume:
     name: Typeset Resume PDF
