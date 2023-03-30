@@ -67,8 +67,7 @@ jobs:
           # install pdftoppm
           sudo apt-get install poppler-utils 
           # generate png preview
-          ls "${RESUME_PDF}"
-          RESUME_BASE=$(printf "${RESUME_PDF}" | sed -e 's/.pdf//')
+          RESUME_BASE=$(printf "${{ env.RESUME_PDF }}" | sed -e 's/.pdf//')
           pdftoppm -png "${{ steps.download.outputs.download-path }}/resume.pdf" ${RESUME_BASE}
           mv ${RESUME_PNG} -t assets/previews/
           echo "RESUME_PNG=${RESUME_BASE}-1.png" >> $GITHUB_ENV
@@ -86,4 +85,4 @@ jobs:
     - name: Install codespell with Pip
       run: pip install -r requirements.txt
     - name: Perform spellcheck with codespell
-      run: codespell
+      run: codespel{l
