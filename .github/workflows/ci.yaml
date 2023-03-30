@@ -5,6 +5,9 @@
 
 on:
   push: {}
+env:
+  # sed pattern: strip ref prefix (eg. 'feat/') if any and replace filename unfriendly characters
+  REF_SUFFIX_PATTERN: "s|[[:alpha:]]+/||g; s|[/-]|_|g"
 jobs:
   typeset-resume:
     name: Typeset Resume PDF
@@ -18,21 +21,20 @@ jobs:
         # needed for querying tectonic releases from github
         github-token: ${{ secrets.GITHUB_TOKEN }}
         tectonic-version: 0.12.0
-    - name: Build Resume PDF
-      run: |
-        tectonic -X build
     - name: Cache Tectonic CTAN packages
       uses: actions/cache@v3
       with:
         path: ~/.cache/Tectonic
         key: tectonic-${{ hashFiles('**/*.tex') }}
         restore-keys: tectonic-
+    - name: Build Resume PDF
+      run: |
+        tectonic -X build
     - name: Derive Resume filename
       id: filename
       run: |
         set -ex -o pipefail
-        # sed: strip prefix (eg. 'feat/') if any and replace filename unfriendly characters
-        REF_SUFFIX="$(printf ${{ github.ref_name }} | sed -Ee 's|[[:alpha:]]+/||g; s|[/-]|_|g')"
+        REF_SUFFIX=$(printf ${{ github.ref_name }} | sed -Ee "${REF_SUFFIX_PATTERN}")
         # rename resume file based on pushed ref.
         RESUME_PDF="zhu_zhanyan_resume_${REF_SUFFIX}.pdf"
         echo "resume_pdf=${RESUME_PDF}" >> "$GITHUB_OUTPUT"
@@ -46,8 +48,6 @@ jobs:
     name: Generate Resume Preview
     runs-on: ubuntu-22.04
     needs: typeset-resume
-    env:
-      RESUME_PDF: "${{ needs.preview-resume.outputs.resume_pdf }}"
     permissions:
       # needed for github-auto-commit-action to commit to repo.
       contents: write
@@ -59,22 +59,20 @@ jobs:
         name: Download Resume PDF
         uses: actions/download-artifact@v3
         with:
-          name: "${{ env.RESUME_PDF }}"
-          path: .
+          name: "${{ needs.preview-resume.outputs.resume_pdf }}"
       - name: Generate PNG preview from PDF
         run: |
           set -ex -o pipefail
           # install pdftoppm
           sudo apt-get install poppler-utils 
           # generate png preview
-          RESUME_BASE=$(printf "${{ env.RESUME_PDF }}" | sed -e 's/.pdf//')
-          pdftoppm -png "${{ steps.download.outputs.download-path }}/resume.pdf" ${RESUME_BASE}
-          mv ${RESUME_PNG} -t assets/previews/
-          echo "RESUME_PNG=${RESUME_BASE}-1.png" >> $GITHUB_ENV
+          REF_SUFFIX=$(printf ${{ github.ref_name }} | sed -Ee "${REF_SUFFIX_PATTERN}")
+          pdftoppm -png *.pdf/resume.pdf "${REF_SUFFIX}"
+          mv "${REF_SUFFIX}-1.png" -t assets/previews/
       - name: Push Resume PNG preview to Github Pages
         uses: stefanzweifel/git-auto-commit-action@v4.16.0
         with:
-          file_pattern: assets/previews/${{ env.RESUME_PNG }}
+          file_pattern: "assets/previews/*.png"
           commit_message: "chore: add/update resume preview for ${{ github.ref }}"
   
   spellcheck:
@@ -85,4 +83,4 @@ jobs:
     - name: Install codespell with Pip
       run: pip install -r requirements.txt
     - name: Perform spellcheck with codespell
-      run: codespel{l
+      run: codespell
