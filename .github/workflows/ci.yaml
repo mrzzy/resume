@@ -21,6 +21,12 @@ jobs:
     - name: Build Resume PDF
       run: |
         tectonic -X build
+    - name: Cache Tectonic CTAN packages
+      uses: actions/cache@v3
+      with:
+        path: ~/.cache/Tectonic
+        key: tectonic-${{ hashFiles('**/*.tex') }}
+        restore-keys: tectonic-
     - name: Derive Resume filename
       id: filename
       run: |
@@ -61,7 +67,8 @@ jobs:
           # install pdftoppm
           sudo apt-get install poppler-utils 
           # generate png preview
-          RESUME_BASE=$(printf ${RESUME_PDF} | sed -e 's/.pdf//')
+          ls "${RESUME_PDF}"
+          RESUME_BASE=$(printf "${RESUME_PDF}" | sed -e 's/.pdf//')
           pdftoppm -png "${{ steps.download.outputs.download-path }}/resume.pdf" ${RESUME_BASE}
           mv ${RESUME_PNG} -t assets/previews/
           echo "RESUME_PNG=${RESUME_BASE}-1.png" >> $GITHUB_ENV
