@@ -3,6 +3,7 @@
 # CI Pipeline
 #
 
+name: Build Resume PDF & PNG Preview
 on:
   push:
     paths:

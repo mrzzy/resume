@@ -4,6 +4,7 @@
 # Cleanup Image Previews
 #
 
+name: Cleanup Resume Image Preview
 on: 
   delete: {}
 env:
