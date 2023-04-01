@@ -8,7 +8,7 @@ on:
   push:
     paths:
       - Tectonic.toml
-      - "src/**"
+      - "src/*"
 env:
   # sed pattern: strip ref prefix (eg. 'feat/') if any and replace filename unfriendly characters
   REF_SUFFIX_PATTERN: "s|[-_[:alpha:]]+/||g; s|[/-]|_|g"
@@ -41,12 +41,13 @@ jobs:
         REF_SUFFIX=$(printf ${{ github.ref_name }} | sed -Ee "${REF_SUFFIX_PATTERN}")
         # rename resume file based on pushed ref.
         RESUME_PDF="zhu_zhanyan_resume_${REF_SUFFIX}.pdf"
+        mv build/resume/resume.pdf "${RESUME_PDF}"
         echo "resume_pdf=${RESUME_PDF}" >> "$GITHUB_OUTPUT"
     - name: Upload built PDF as Github Actions Artifact
       uses: actions/upload-artifact@v3
       with:
         name: "${{ steps.filename.outputs.resume_pdf }}"
-        path: build/resume/resume.pdf
+        path: "${{ steps.filename.outputs.resume_pdf }}"
   
   preview-resume:
     name: Generate Resume Preview
@@ -71,7 +72,7 @@ jobs:
           sudo apt-get install poppler-utils 
           # generate png preview
           REF_SUFFIX=$(printf ${{ github.ref_name }} | sed -Ee "${REF_SUFFIX_PATTERN}")
-          pdftoppm -png *.pdf/resume.pdf "${REF_SUFFIX}"
+          pdftoppm -png *.pdf/*.pdf "${REF_SUFFIX}"
           mv "${REF_SUFFIX}-1.png" -t assets/previews/
       - name: Push Resume PNG preview to Github Pages
         uses: stefanzweifel/git-auto-commit-action@v4.16.0
