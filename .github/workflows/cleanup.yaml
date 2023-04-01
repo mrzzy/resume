@@ -1,0 +1,29 @@
+#
+# Resume
+# CI Pipeline
+# Cleanup Image Previews
+#
+
+on: 
+  delete: {}
+env:
+  # sed pattern: strip ref prefix (eg. 'feat/') if any and replace filename unfriendly characters
+  REF_SUFFIX_PATTERN: "s|[-_[:alpha:]]+/||g; s|[/-]|_|g"
+jobs:
+  clean-preview-resume:
+    name: Cleanup Image Preview
+    runs-on: ubuntu-22.04
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        ref: gh-pages
+    - name: Remove Image Preview
+      run: |
+        set -ex -o pipefail
+        REF_SUFFIX=$(printf ${{ github.ref_name }} | sed -Ee "${REF_SUFFIX_PATTERN}")
+        rm -v "assets/previews/${REF_SUFFIX}-01.png"
+    - name: Push remove commit to repository
+      uses: stefanzweifel/git-auto-commit-action@v4.16.0
+      with:
+        file_pattern: "assets/previews/*.png"
+        commit_message: "chore: cleanup image preview for ${{ github.ref }}"

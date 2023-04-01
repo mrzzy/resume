@@ -4,7 +4,10 @@
 #
 
 on:
-  push: {}
+  push:
+    paths:
+      - Tectonic.toml
+      - "src/*"
 env:
   # sed pattern: strip ref prefix (eg. 'feat/') if any and replace filename unfriendly characters
   REF_SUFFIX_PATTERN: "s|[-_[:alpha:]]+/||g; s|[/-]|_|g"
@@ -74,6 +77,27 @@ jobs:
         with:
           file_pattern: "assets/previews/*.png"
           commit_message: "chore: add/update resume preview for ${{ github.ref }}"
+
+  update-readme-preview-url:
+    name: Update Resume Preview URL
+    runs-on: ubuntu-22.04
+    permissions:
+      # needed for github-auto-commit-action to commit to repo.
+      contents: write
+    steps:
+      - uses: actions/checkout@v3
+      - name: Update Preview URL on README 
+        run: |
+          set -ex -o pipefail
+          REF_SUFFIX=$(printf ${{ github.ref_name }} | sed -Ee "${REF_SUFFIX_PATTERN}")
+          # substitute image preview url with updated url based on current ref
+          sed --in-place --regexp-extended \
+            --expression="s|[^/]*-1\.png|${REF_SUFFIX}-1\.png|" README.md
+      - name: Push updated README to repository
+        uses: stefanzweifel/git-auto-commit-action@v4.16.0
+        with:
+          file_pattern: "README.md"
+          commit_message: "doc: update resume preview url in README for ${{ github.ref }}"
   
   spellcheck:
     name: Spellcheck Resume
