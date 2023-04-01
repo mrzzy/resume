@@ -8,8 +8,8 @@ name: Cleanup Resume Image Preview
 on: 
   delete: {}
 env:
-  # sed pattern: strip ref prefix (eg. 'refs/heads/feat/') if any and replace filename unfriendly characters
-  REF_SUFFIX_PATTERN: "s:refs/(heads|tags)/[-_[:alpha:]]+/::g; s:[/-]:_:g"
+  # sed pattern: strip ref prefix (eg. 'heads/feat/') if any and replace filename unfriendly characters
+  REF_SUFFIX_PATTERN: "s:((heads|tags)/[-_[:alpha:]]+/)?::g; s:[/-]:_:g"
 jobs:
   clean-preview-resume:
     name: Cleanup Image Preview
