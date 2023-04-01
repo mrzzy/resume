@@ -22,7 +22,7 @@ jobs:
       run: |
         set -ex -o pipefail
         REF_SUFFIX=$(printf ${{ github.event.ref }} | sed -Ee "${REF_SUFFIX_PATTERN}")
-        rm -v "assets/previews/${REF_SUFFIX}-01.png"
+        rm -v "assets/previews/${REF_SUFFIX}-1.png"
     - name: Push remove commit to repository
       uses: stefanzweifel/git-auto-commit-action@v4.16.0
       with:
