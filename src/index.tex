@@ -17,42 +17,46 @@
 }
 
 % Summary
-Self driven Data Engineer with software engineering background building scalable, cloud native backend systems.
+Full Stack Developer with experience developing new projects, maintaining legacy projects, organising workshops and supporting competitions.
+
+\section{Education}
+\experience{Diploma in Information Technology}{Ngee Ann Polytechnic}{Apr 2018}{Apr 2021}
+\begin{itemize}
+  \item Organized \& conducted a 6 part Machine Learning workshop for technology interest club to engage \& upgrade members. \footnote{https://github.com/mrzzy/mlbootcamp}
+  \item Supported inter-polytechnic Data Structure \& Algorithms competition by hosting a online judge on AWS with Kubernetes.
+\end{itemize}
 
 \section{Experience}
 % format: action, accomplishment, results. concise short sentence fragments
-\experience{ML Engineer Intern}{Gojek}{Mar 2020}{Oct 2020}
+\experience{Machine Learning Engineer Intern}{Gojek}{Mar 2020}{Oct 2020}
 \begin{itemize}
-  % skills: Software Engineering, Security, ODIC, Java, Golang, Performanace
-  \item Made extensive contributions \footnote{https://github.com/feast-dev/feast/commits?author=mrzzy} 
-    to the Feast ML Feature Store, including ODIC based access control to the Feast's Java 
-    \& Golang SDKs, enhancing data security without affecting latency.
-
-  % skills: Redis, Protobuf
-  % soft-skills: problem-solving, analytical
-  \item Identified root cause of decoding error when with serving data from Redis.
-    Fixed issue by replacing Protobuf position-based encoding with key-based encoding
-    \footnote{https://github.com/feast-dev/feast/pull/908}.
-
-  % skills: software testing
-  \item Rigourously tested written code with extensive unit, integration \& end to end tests,
-    giving team sufficient confidence to introduce an intern's patches into production.
+  % skills: greenfield projects
+  \item Created a new tool to generate Prometheus Alerts to monitor Data Quality,
+    allowing Data Scientists to focus on Machine Learning instead of DevOps.
 
   % skills: Data Visualisation, Grafana, BigQuery, SQL
   % soft-skills: teamwork
   \item Designed Grafana Dashboard to visualise Feast usage metrics in BigQuery which aided the project manager \& technical lead in their decision making.
 
-  % skills: Data Visualisation, Grafana, BigQuery, SQL
-  % soft-skills: teamwork
-  \item Visualised Feast usage metrics queried BigQuery Data Warehouse with SQL 
-    in a Grafana dashboard. Aided the project manager \& technical leads in their decision making.
+  % skills: legacy codebases, software maintenance
+  \item Made 43 contributions to maintain and enhance the 
+    \footnote{https://github.com/feast-dev/feast/commits?author=mrzzy} 
+    the Feast project with an existing codebase.
+
+  % skills: cloud computing, devops
+  \item Worked extensively with devops tools such as Terraform, Docker, Kubernetes
+    to host mission critical applications on Google Cloud Platform (GCP).
+
+  % skills: software testing
+  \item Rigourously tested written code with extensive unit, integration \& end to end tests.
+
 \end{itemize}
 
 \experience{Software Engineer Intern}{Tinkertanker}{Jan 2018}{Apr 2018}
 \begin{itemize}
   % skills: Software Engineering
   \item Rewrote Tinkertanker's internal employee allocation system as 
-    a customized Django solution, from Backend to Frontend. 
+    a customized Django solution, from Backend to Frontend (Full Stack).
     Replaced existing Google Sheets system which had performance issues.
   % skills: GitHub Actions, CI/CD, SOftware Testing, Docker, Containers
   \item Wrote GitHub Actions CI/CD pipeline to continuous lint, test codebase.
@@ -62,38 +66,10 @@ Self driven Data Engineer with software engineering background building scalable
     bogged down developer productivity.
 \end{itemize}
 
-\section{Projects}
-% skills: airflow, cloud computing, distributed computing, Ray, ML, System Design
-\project{Sortin Hat}{github.com/mrzzy/sortin-hat}
-\begin{itemize}
-  \item Implemented an Airflow ML Pipeline that's trains models to predict student scores
-    to facilitate academic target setting.
-  \item Wrote Pandas ETL to clean \& transform Excel sheets into ML model features.
-  \item Parallelised hyperparameter tuning on distributed Ray Cluster provisioned on-demand.
-  \item Designed cloud native architecture with Kubernetes (GKE) \& Object Storage (GCS).
-\end{itemize}
-
-% skills: ansible, terraform, vagrant, packer, GCP, DevOps
-\project{WARP}{github.com/mrzzy/warp}
-\begin{itemize}
-  \item Created a web or SSH accessible development environment in a GCP VM,
-    built with Terraform, Ansible, Vagrant, Packer.
-  \item Ansible playbook provides a single source of truth of tools \& their versions,
-    enforcing consistency between WARP VM \& Laptop, allowing for reproduceable code builds.
-  \item Automated dependency upgrades with Renovate.
-\end{itemize}
-  
-\section{Education}
-\experience{Diploma in Information Technology}{Ngee Ann Polytechnic}{Apr 2018}{Apr 2021}
-\begin{itemize}
-  \item SGD Scholarship recipient (2018). GPA: 3.82.
-  \item Organized workshops on ML and Cloud Computing for technology interest club.
-\end{itemize}
-
 \section{Skills}
 \begin{description}
   \footnotesize{
-  \item[Technical] Python, SQL, Java, Golang, GCP, BigQuery, AWS, S3, Redshift, Spark, DBT, Airflow, Kubernetes, Docker, Pandas, Data Modeling, Kimball, Data Visualisation, Data Analysis, Data Quality, Data Warehouse, Data Lake, Data Pipeline, ETL, Software Enginering, TDD, FP, OOP, Redis, PostgreSQL, Kafka
+  \item[Technical] Python, SQL, Java, JavaScript, TypeScript, Golang, Rust, GCP, AWS, DBT, Kubernetes, Docker, React, Django, TDD, FP, SDLC, Redis, PostgreSQL
   \item[People]
     Self Driven, Self Starter, Problem Solving, Analytical, Team Player, Ambitious, Curious, Result Oriented
   }
