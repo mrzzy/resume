@@ -7,95 +7,73 @@
 % Header
 \fancyhead{} % clear default header
 
-\fancyhead[C]{\Large{\textbf{Zhu Zhanyan}}\\
+\fancyhead[L]{\Large{\textbf{Zhu Zhanyan}}\\
               \normalsize{Software Engineer} \\
               \footnotesize{Singapore}}
-\fancyhead[L]{\href{mailto:mrzzy.dev@gmail.com}{mrzzy.dev@gmail.com}\\}
-\fancyhead[R]{
-  \href{https://github.com/mrzzy}{github.com/mrzzy} \\
-  \href{https://linkedin.com/in/zhu-zhanyan}{linkedin.com/in/zhu-zhanyan}%
+\fancyhead[R]{Email: \href{mailto:mrzzy.dev@gmail.com}{mrzzy.dev@gmail.com}\\
+  GitHub: \href{https://github.com/mrzzy}{github.com/mrzzy} \\
+  Linkedin: \href{https://linkedin.com/in/zhu-zhanyan}{linkedin.com/in/zhu-zhanyan}%
 }
 
 % Summary
-First Year Undegraduate Computer Science major seeking oppotunities to building software systems at scale.
+Undegraduate (1st Year) Computer Science major seeking opportunities to building software systems at scale.
 
 \section{Experience}
-% format: action, accomplishment, results. concise short sentence fragments
-\experience{ML Engineer Intern}{Gojek}{Mar 2020}{Oct 2020}
+\experience{Machine Learning Engineer Intern}{Gojek}{Mar 2020}{Oct 2020}
 \begin{itemize}
-  % skills: Software Engineering, Security, ODIC, Java, Golang, Performanace
-  \item Made 43 contributions \footnote{https://github.com/feast-dev/feast/commits?author=mrzzy} 
-    to the open source Feast ML Feature Store, including ODIC based access control to the Feast's Java 
-    \& Golang SDKs, enhancing data security without affecting latency.
-
-  % skills: Redis, Protobuf
-  % soft-skills: problem-solving, analytical
-  \item Identified root cause of decoding error when with serving data from Redis.
-    Fixed issue by replacing Protobuf position-based encoding with key-based encoding
-    \footnote{https://github.com/feast-dev/feast/pull/908}.
-
-  % skills: software testing
-  \item Rigourously tested written code with extensive unit, integration \& end to end tests,
-    giving team sufficient confidence to introduce an intern's patches into production.
-
-  % skills: Data Visualisation, Grafana, BigQuery, SQL
-  % soft-skills: teamwork
-  \item Designed Grafana Dashboard to visualise Feast usage metrics in BigQuery which aided the project manager \& technical lead in their decision making.
-
-  % skills: Data Visualisation, Grafana, BigQuery, SQL
-  % soft-skills: teamwork
-  \item Visualised Feast usage metrics queried BigQuery Data Warehouse with SQL 
-    in a Grafana dashboard. Aided the project manager \& technical leads in their decision making.
+    \item Identified \& swiftly resolved a with production issue with Feast, the Machine Learning
+      feature database that powers Gojek's driver-passenger matchmaking model.
+      An issue with Feast's Redis data encoding causing production downtime and 
+      costing the company's bottom line. Quickly wrote \& deployed a patch to bring Feast back up.
+    \item Unblocked Feast's authentication roll out by delivering
+      support in Java \& Golang clients for Feast
+      Authentication was sorely needed to provide access controls for better data governance.
+    \item Management planning Feast's future lacked observability into Feast usage. Governance
+        Designed \& implemented a Grafana dashboard using metrics computed on 
+        BigQuery SQL to help management make informed decisions.
 \end{itemize}
 
 \experience{Software Engineer Intern}{Tinkertanker}{Jan 2018}{Apr 2018}
 \begin{itemize}
-  % skills: Software Engineering
-  \item Rewrote Tinkertanker's internal employee allocation system as 
-    a customized Django solution, from Backend to Frontend. 
-    Replaced existing Google Sheets system which had performance issues.
-  % skills: GitHub Actions, CI/CD, SOftware Testing, Docker, Containers
-  \item Wrote GitHub Actions CI/CD pipeline to continuous lint, test codebase.
-    Encapsulated application in Docker containers to accelerate deployment.
-  % skills: Refactoring
-  \item Refactored code using SOLID principles to cut through techdebt that
-    bogged down developer productivity.
+  \item Rewrote aging Google Sheets instructor-course allocation system in Python, Django, PostgreSQL to resolve longstanding performance issues.
+    Designed \& implemented a new user interface for the system with Jinja, HTML, JavaScript for smooth User Experience (UX).
+  \item Enforced Software Engineering best practices including Test Driven Development,
+    documentation, continuous integration (CI). Prolonged the longevity of the project
+    past 5 years and counting.
 \end{itemize}
 
 \section{Projects}
-% skills: airflow, cloud computing, distributed computing, Ray, ML, System Design
-\project{Sortin Hat}{github.com/mrzzy/sortin-hat}
+\project{Providence}{github.com/mrzzy/providence}
 \begin{itemize}
-  \item Implemented an Airflow ML Pipeline that's trains models to predict student scores
-    to facilitate academic target setting.
-  \item Wrote Pandas ETL to clean \& transform Excel sheets into ML model features.
-  \item Parallelised hyperparameter tuning on distributed Ray Cluster provisioned on-demand.
-  \item Designed cloud native architecture with Kubernetes (GKE) \& Object Storage (GCS).
+  \item Automated tedious, error prone manual accounting in the YNAB app by writing a routine ETL data pipeline to import SG bank transactions. 
+    Freed up time on weekends to work on hobbies and improved data quality by avoiding data entry errors.
+  \item Enriched opaque, Public Transport billing bank transactions that lumped multiple trips together with individual trip details by scraping details from a website with Rust.
+    Provided ability to drill down lump bank transactions into individual trips for additional context when accounting.
+  \item Visualised savings \& cash flow with Apache Superset dashboard to give greater insight into financial health. Assists in budgeting for future expenses.
+  \item Created accounting aide that used transaction heuristic to match YNAB \& bank transactions. Saved manual scrolling to needed look for \& match transactions.
 \end{itemize}
 
-% skills: ansible, terraform, vagrant, packer, GCP, DevOps
 \project{WARP}{github.com/mrzzy/warp}
 \begin{itemize}
-  \item Created a web or SSH accessible development environment in a GCP VM,
-    built with Terraform, Ansible, Vagrant, Packer.
-  \item Ansible playbook provides a single source of truth of tools \& their versions,
-    enforcing consistency between WARP VM \& Laptop, allowing for reproduceable code builds.
-  \item Automated dependency upgrades with Renovate.
+  \item Engineered Google Cloud Platform (GCP) hosted development environment with Ansible, Packer, Terraform that was ready-to-go within minutes of pressing a button. 
+    SSH \& Web browser access gave flexibility to code anywhere: on an iPad, mobile phone, or a public computer.
+  \item Streamlined development toolchain upgrades by integrating Renovate to provide dependency upgrades and Github Actions to test \& accept non-breaking upgrades. Greatly reduced the maintains workload required to keep development toolchain up to date.
 \end{itemize}
   
 \section{Education}
 \experience{Bachelor of Engineering in Computer Science}{Nanyang Technological University}{Apr 2023}{Apr 2027}
 \experience{Diploma in Information Technology}{Ngee Ann Polytechnic}{Apr 2018}{Apr 2021}
 \begin{itemize}
-  \item SGD Scholarship recipient (2018).
+  \item Ported open source Content Management System (CMS) to Docker containers and Kubernetes orchestration.
+    Ported CMS hosted on AWS successfully supported programming contest with over 40 participants. \footnote{https://github.com/np-overflow/k8s-cms}
   \item Organized \& conducted a 6 part ML workshop for technology interest club to engage \& upgrade members. \footnote{https://github.com/mrzzy/mlbootcamp}
 \end{itemize}
 
 \section{Skills}
 \begin{description}
   \footnotesize{
-  \item[Technical] Python, SQL, Java, Golang, GCP, BigQuery, AWS, S3, Redshift, Spark, DBT, Airflow, Kubernetes, Docker, Pandas, Data Modeling, Kimball, Data Visualisation, Data Analysis, Data Quality, Data Warehouse, Data Lake, Data Pipeline, ETL, Software Enginering, TDD, FP, OOP, Redis, PostgreSQL, Kafka
+  \item[Technical] Python, SQL, Java, JavaScript, TypeScript, Golang, GCP, AWS, Terraform, Docker, Vagrant, Ansible, Packer, Kubernetes, CI/CD, Redis, PostgreSQL, Grafana
   \item[People]
-    Self Driven, Self Starter, Problem Solving, Analytical, Team Player, Ambitious, Curious, Result Oriented
+    Self Driven, Self Starter, Analytical, Team Player, Ambitious, Curious, Result Oriented
   }
 \end{description}
