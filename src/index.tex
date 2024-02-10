@@ -18,26 +18,32 @@
 % Summary
 Undergraduate (1st Year) Computer Science major seeking opportunities to building software systems at scale.
 
+\section{Education}
+\experience{Bachelor of Engineering in Computer Science}{Nanyang Technological University}{Apr 2023}{Apr 2027}
+\begin{itemize}
+  \item Collaborated with club members to maintain backend responsible for safekeeping school club's merchandise sales data with Node.js, Express.js \& TypeScript.
+\end{itemize}
+\experience{Diploma in Information Technology}{Ngee Ann Polytechnic}{Apr 2018}{Apr 2021}
+\begin{itemize}
+  \item Supported programming contest with/media/mrzzy/Backup/pickle/lock.exclusive over 40 participants by deploying online judge use to evaluate participant solutions on AWS with Kubernetes \& Docker.
+  \item Organized \& conducted a 6 part Machine Learning  (ML) workshop for technology interest club to engage members in ML.
+\end{itemize}
+
+
 \section{Experience}
 \experience{Machine Learning Engineer Intern}{Gojek}{Mar 2020}{Oct 2020}
 \begin{itemize}
-    \item Identified \& swiftly resolved a with production issue with Feast, the Machine Learning
-      feature database that powers Gojek's driver-passenger matchmaking model.
-      Identified issue with Feast's Redis data encoding causing production downtime and 
-      costing the company's bottom line. Wrote the patch that brought Feast back up.
-    \item Unblocked Feast's authentication roll out by delivering
-      support in Java \& Golang clients for Feast.
-      Authentication was sorely needed to provide access controls for better data governance.
+    \item Resolved production issue causing system downtime by patching data schema. Service degradation was affecting a critical downstream system.
     \item 
-        Designed \& implemented a Grafana dashboard using metrics computed on 
-        BigQuery SQL to help management make informed decisions 
-        on the future of the Feast project.
+        Designed \& implemented a analytics dashboard with Grafana, BigQuery and SQL. Assisted management in making informed decisions during project planning.
+    \item Wrote authentication support for SDKs relied on by internal clients in Golang \& Java for enhanced data security.
 \end{itemize}
 
 \experience{Software Engineer Intern}{Tinkertanker}{Jan 2018}{Apr 2018}
 \begin{itemize}
   \item Collaborated on a rewrite aging Google Sheets instructor-course allocation system in Python, Django, PostgreSQL to 
-    resolve longstanding performance issues. Designed \& implemented a new user interface 
+ /media/mrzzy/Backup/pickle/lock.exclusive   resolve longstanding performance issues. 
+  \item Designed \& implemented a new user interface 
     for the system with Jinja, HTML, JavaScript for smooth User Experience (UX).
   \item Enforced Software Engineering best practices including Test Driven Development,
     documentation, continuous integration (CI). Prolonged the longevity of the project
@@ -45,32 +51,26 @@ Undergraduate (1st Year) Computer Science major seeking opportunities to buildin
 \end{itemize}
 
 \section{Projects}
-\project{Providence}{github.com/mrzzy/providence}
+
+\experience{Providence}{Personal}{Mar 2023}{July 2023}
 \begin{itemize}
-  \item Automated tedious, error prone manual accounting in the YNAB app by writing a routine ETL data pipeline to import SG bank transactions. 
-    Freed up time on weekends to work on hobbies and improved data quality by avoiding data entry errors.
-  \item Enriched opaque, Public Transport billing bank transactions that lumped multiple trips together with individual trip details by scraping details from a website with Rust.
-    Provided ability to drill down lump bank transactions into individual trips for additional context when accounting.
+  \item Automated manual accounting a with a ETL data pipeline to import bank transactions into accounting system. Improved data quality by avoiding data entry errors.
   \item Visualised savings \& cash flow with Apache Superset dashboard to give greater insight into financial health. Assists in budgeting for future expenses.
-  \item Created accounting aide that used transaction heuristic to match YNAB \& bank transactions. Saved manual scrolling to needed look for \& match transactions.
+  \item Created accounting aide that used transaction heuristic to match accounting \& bank transactions. Saved time needed to manually search for matching transactions.
 \end{itemize}
 
-\project{WARP}{github.com/mrzzy/warp}
+\experience{WARP}{Personal}{May 2022}{}
 \begin{itemize}
-  \item Engineered Google Cloud Platform (GCP) hosted development environment with Ansible, Packer, Terraform that was ready-to-go within minutes of pressing a button. 
-    SSH \& Web browser access gave flexibility to code anywhere: on an iPad, mobile phone, or a public computer.
-  \item Streamlined development toolchain upgrades by integrating Renovate to provide dependency upgrades and Github Actions to test \& accept non-breaking upgrades. Greatly reduced the maintains workload required to keep development toolchain up to date.
+  \item Engineered GCP cloud hosted terminal coding environment accessible on any device.
+  \item Streamlined toolchain upgrades by integrating Renovate dependency manager to provide automatic upgrades. Reduced maintenance workload required to keep development toolchain up to date.
+\end{itemize}
+
+\experience{Bentobox}{Ngee Ann Polytechnic (Final Year Project)}{Nov 2020}{Mar 2021}
+\begin{itemize}
+\item Achieved remote execution of Python code on C++ runtime by design a gRPC protocol. Fused the simplicity of Python to performance of C++.
+\item Crafted a compiler that parsed a subset of Python into a graph that could be executed on a external C++ runtime.
 \end{itemize}
   
-\section{Education}
-\experience{Bachelor of Engineering in Computer Science}{Nanyang Technological University}{Apr 2023}{Apr 2027}
-\experience{Diploma in Information Technology}{Ngee Ann Polytechnic}{Apr 2018}{Apr 2021}
-\begin{itemize}
-  \item Ported open source Content Management System (CMS) to Docker containers and Kubernetes orchestration.
-    Ported CMS hosted on AWS successfully supported programming contest with over 40 participants. \footnote{https://github.com/np-overflow/k8s-cms}
-  \item Organized \& conducted a 6 part ML workshop for technology interest club to engage \& upgrade members. \footnote{https://github.com/mrzzy/mlbootcamp}
-\end{itemize}
-
 \section{Skills}
 \begin{itemize}
   \item Python, SQL, Java, JavaScript, TypeScript, Golang, GCP, AWS, Terraform, Docker, Vagrant, Ansible, Packer, Kubernetes, CI/CD, Redis, PostgreSQL, Grafana
