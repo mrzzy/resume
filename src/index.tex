@@ -3,12 +3,11 @@
 % Contents
 %
 
-
 % Header
 \fancyhead{} % clear default header
 
 \fancyhead[L]{\Large{\textbf{Zhu Zhanyan}}\\
-              \normalsize{Software Engineer} \\
+              \normalsize{Backend Software Engineer} \\
               \footnotesize{Singapore}}
 \fancyhead[R]{Email: \href{mailto:zhanyan@mrzzy.co}{zhanyan@mrzzy.co}\\
   GitHub: \href{https://github.com/mrzzy}{github.com/mrzzy} \\
@@ -16,62 +15,63 @@
 }
 
 % Summary
-Undergraduate Computer Science major seeking opportunities to building software systems at scale.
+Undergraduate Computer Science major with industry experience seeking opportunities to build backend systems.
 
 \section{Experience}
 \experience{Machine Learning Engineer Intern}{Gojek}{Mar 2020}{Oct 2020}
 \begin{itemize}
-  \item Maintained open source Machine Learning (ML) Feature Store with Python, Java, Golang, Kafka \& Redis. Feature store was responsible for supplying data for both ML training \& inference.
-  \item Resolved production issue causing system downtime by patching Redis data schema. Service degradation affected a critical downstream system.
-  \item 
-      Designed \& implemented a analytics dashboard with Grafana, Google Cloud (GCP) BigQuery Data Warehouse and SQL. Assisted management in making informed decisions during project planning.
+  \item Developed open source Machine Learning (ML) Feature Store for Gojek's driver-customer matchmaking model with Python, Java, Golang, Kafka \& Redis.
+  \item Resolved production issue due to mismatch Redis storage schema, restoring critical upstream matchmaking model.
+  \item Designed \& implemented a analytics dashboard to support management decision making with Grafana, Google Cloud (GCP) BigQuery Data Warehouse and SQL.
 \end{itemize}
 
 \experience{Software Engineer Intern}{Tinkertanker}{Jan 2018}{Apr 2018}
 \begin{itemize}
-  \item Collaborated on a rewrite aging Google Sheets instructor-course allocation system in Python, Django, PostgreSQL to 
-    resolve longstanding performance issues. 
-  \item Designed \& implemented a new user interface 
+  \item Rewrote aging instructor-course allocation system in Python, Django, PostgreSQL to 
+    resolve longstanding performance issues with Google Sheets solution.
+  \item Designed \& implemented a responsive User Interface (UI)
     for the system with Jinja, HTML, JavaScript for smooth User Experience (UX).
-  \item Enforced Software Engineering best practices including Test Driven Development,
-    documentation. Wrote Github actions continuous integration (CI). 
-    Prolonged the longevity of the project past 5 years and counting.
+  \item Enforced best practices including testing, documentation, Github Actions continuous integration (CI),
+    prolonging longevity of the project past 5 years.
 \end{itemize}
 
-
 \section{Projects}
+\experience{art.mrzzy.co}{Personal}{Jun 2024}{July 2024}
+\begin{itemize}
+  \item Hosted static website on Backblaze B2 bucket with Cloudflare CDN caching to achieve lowest cost of hosting of < \$5 per month.
+  \item Automated deployment process with push-to-pusblish Github Actions CI/CD pipeline.
+\end{itemize}
+
 \experience{Providence}{Personal}{Mar 2023}{July 2023}
 \begin{itemize}
-  \item Automated manual with engineering Extract Load Transform (ETL) data pipeline with with Python, SQL, DBT \& AWS Redshift Data Warehouse orchestrated with Apache Airflow to import \& transform bank transactions from accounting system. Improved data quality by avoiding data entry errors.
-  \item Integrated transport data from SimplyGo by developing custom data source. Enriched accounting data by providing more insights into transport spending.
-  \item Visualised savings \& cash flow with Apache Superset dashboard to give greater insight into financial health. Dashboard provided crucial guidance for budgeting future expenses.
+  \item Visualised cash flow with Apache Superset dashboard to give greater insight into personal financial health.
+  \item Automated data refresh for dashboard with batch Extract Load Transform (ETL) data pipeline with with Python, SQL, DBT AWS, Apache Airflow.
+  \item Developed custom data source with Rust to sidestep manual data entry errors by loading trip directly from source.
 \end{itemize}
 \experience{WARP}{Personal}{May 2022}{}
 \begin{itemize}
-  \item Engineered GCP hosted Linux coding environment accessible on any device deployed using Terraform,
-    Packer Infrastructure as Code (IaC) tools.
-  \item Streamlined toolchain upgrades by integrating Renovate dependency manager to provide automatic upgrades. Reduced maintenance workload required to keep development toolchain up to date.
+  \item Engineered coding environment accessible on any device with a Websocket enabled browser with Terraform \& Packer.
+  \item Automated toolchain upgrades by integrating Renovate dependency manager to provide automatic upgrades.
 \end{itemize}
 \experience{Bentobox}{Ngee Ann Polytechnic (Final Year Project)}{Nov 2020}{Mar 2021}
 \begin{itemize}
-\item Achieved remote execution of Python code on C++ runtime by design a gRPC protocol. Fused the simplicity of Python to performance of C++.
-\item Crafted a compiler that parsed a subset of Python into a graph that could be executed on a external C++ runtime.
+  \item Achieved remote execution of Python code on C++ runtime via transmitting a intermediate representation (IR) over gRPC.
+  \item Combined best of both worlds: simplicity of Python coding with the performance of C++ runtime execution.
 \end{itemize}
 
 \section{Education}
 \experience{Bachelor of Engineering in Computer Science}{Nanyang Technological University}{Aug 2023}{May 2027}
 \begin{itemize}
-  \item Transformed 8GB JSON Yelp Dataset into a Parquet One Big Table suitable for Data Science with Apache Spark on Databricks. Dataset was too big to be processed on a single machine.
-  \item Maintained club's merchandise sales backend with Node.js \& TypeScript. Club activities primarily funded by merchandise sales.
+  \item Transformed 8GB JSON Yelp Dataset into a Parquet One Big Table suitable for Data Science project with Apache Spark / Databricks.
+  \item Maintained club's merchandise sales backend with Node.js \& TypeScript instrumental for club funding.
 \end{itemize}
 \experience{Diploma in Information Technology}{Ngee Ann Polytechnic}{Apr 2018}{Apr 2021}
 \begin{itemize}
-  \item Supported programming contest with over 40 participants by deploying online judge use to evaluate participant solutions on AWS with Kubernetes \& Docker.
-  \item Organized \& conducted a 6 part Machine Learning  (ML) workshop for technology interest club to engage members in ML.
+  \item Deploying online judge use to evaluate participant solutions on AWS with Kubernetes \& Docker to support programming contest with over 40 participants. 
 \end{itemize}
   
 \section{Skills}
 \begin{itemize}
-  \item Python, SQL, Java, JavaScript, TypeScript, Golang, Cloud Computing, GCP, AWS, Terraform, Docker, Ansible, Packer, Kubernetes, CI/CD, Github Actions, Redis, PostgreSQL, Grafana, DBT, Linux, Redshift, BigQuery, Airflow, Spark, Big Data
-  \item Self Driven, Self Starter, Analytical, Collaborative, Ambitious, Curious, Result Oriented, Committed, Problem Solver
+  \item Python, SQL, Java, JavaScript, TypeScript, Node.js, Golang, Rust, Cloud Computing, GCP, AWS, Terraform, Docker, Ansible, Packer, Kubernetes, CI/CD, Github Actions, Redis, PostgreSQL, Grafana, DBT, Linux, Redshift, BigQuery, Airflow, Spark
+  \item Self Driven, Self Starter, Analytical, Collaborative, Ambitious, Fast Learner, Result Oriented, Committed, Problem Solving
 \end{itemize}
