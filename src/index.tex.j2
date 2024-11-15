@@ -1,0 +1,66 @@
+%
+% Resume
+% Contents
+%
+
+%----------HEADING-----------------
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+  \textbf{\href{https://mrzzy.co/}{\Large Zhu Zhanyan}} & Email: \href{mailto:dev@mrzzy.co}{dev@mrzzy.co}\\
+  \href{https://mrzzy.co/}{Software Engineer (Data)} & GitHub: \href{https://github.com/mrzzy}{github.com/mrzzy} \\
+  & Linkedin: \href{https://www.linkedin.com/in/zhu-zhanyan/}{linkedin.com/in/zhu-zhanyan} \\
+\end{tabular*}
+
+
+{{ intro.description }}
+
+%-----------EXPERIENCE-----------------
+\section{{"{" + work.title + "}"}}
+  \resumeSubHeadingListStart
+  {% for experience in work.experiences %}
+    \resumeSubheading
+      {{"{" + experience.company + "}"}}{}
+      {{"{" + experience.role + "}"}}{{"{" + experience.timeframe + "}"}}
+      \resumeItemListStart
+        {% for achievement in experience.achievements %}
+          \item{{"{" + achievement + "}"}}
+        {% endfor %}
+      \resumeItemListEnd
+  {% endfor %}
+  \resumeSubHeadingListEnd
+
+
+%-----------PROJECTS-----------------
+\section{{"{" + projects.title + "}"}}
+  \resumeSubHeadingListStart
+    {% for project in projects.projects %}
+      \resumeSubheading
+        {{"{" + project.name + "}"}}{{"{" + project.timeframe + "}"}}
+        {{"{\href{" + project.links.writeup + "}{" + project.links.writeup + "}}"}}
+        {{"{\href{" + project.links.github + "}{" + project.links.github + "}}"}}
+        \resumeItemListStart
+          {% for achievement in project.achievements %}
+            \item{{"{" + achievement + "}"}}
+          {% endfor %}
+        \resumeItemListEnd
+    {% endfor %}
+  \resumeSubHeadingListEnd
+
+%-----------EDUCATION-----------------
+\section{{"{" + studies.title + "}"}}
+  \resumeSubHeadingListStart
+    {% for institution in studies.institutions %}
+      \resumeSubheading
+        {{"{" + institution.name + "}"}}{}
+        {{"{" + institution.qualification + "}"}}{{"{" + institution.timeframe + "}"}}
+    {% endfor %}
+  \resumeSubHeadingListEnd
+
+%--------SKILLS------------
+\section{{"{" + skills.title + "}"}}
+ \resumeSubHeadingListStart
+   {% for skillset in skills.skillsets %}
+     \resumeSubItem{{"{" + skillset.name + "}"}}{{"{" + skillset.skills + "}"}}
+    {% endfor %}
+ \resumeSubHeadingListEnd
+
+% vim:ft=tex.jinja2

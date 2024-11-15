@@ -1,0 +1,98 @@
+{
+  "intro": {
+    "title": "Summary",
+    "description": "Results-driven Software Engineer and Computer Science undergraduate with a data engineering focus."
+  },
+  "work": {
+    "title": "Experience",
+    "experiences": [
+      {
+        "company": "Gojek",
+        "timeframe": "Mar 2020 - Oct 2020",
+        "role": "Machine Learning Engineer Intern",
+        "achievements": [
+          "Engineered an open-source Machine Learning (ML) Feature Store for Gojek's driver-customer matchmaking model, enhancing data processing efficiency using Python, Java, Golang, Kafka, and Redis.",
+          "Resolved critical production issue by correcting Redis storage schema mismatch, ensuring uninterrupted matchmaking model performance.",
+          "Designed and deployed a comprehensive analytics dashboard using Grafana and GCP BigQuery, empowering management with real-time insights for data-driven decision-making."
+        ]
+      },
+      {
+        "company": "Tinkertanker",
+        "timeframe": "Jan 2018 - Apr 2018",
+        "role": "Software Engineer Intern",
+        "achievements": [
+          "Revamped a legacy instructor-course allocation system using Python, Django, and PostgreSQL, significantly improving performance and reliability over the previous Google Sheets-based solution.",
+          "Developed a responsive User Interface (UI) with Jinja, HTML, and JavaScript, enhancing the user experience for a seamless interaction with the system.",
+          "Implemented best practices such as comprehensive testing, documentation, and continuous integration via Github Actions, extending the project's lifecycle for over 5 years."
+        ]
+      }
+    ]
+  },
+  "projects": {
+    "title": "Projects",
+    "projects": [
+      {
+        "name": "Flowmotion",
+        "timeframe": "Sep 2024 - Nov 2024",
+        "achievements": [
+          "Engineered a real-time traffic congestion routing app that leverages live camera feeds and machine learning to deliver optimized routes for Singaporean drivers, improving commute efficiency.",
+          "Integrated a custom YOLOv8-based machine learning model to analyze traffic congestion, delivering real-time insights for route optimization using the OSRM API.",
+          "Developed a cross-platform mobile application with Flutter, ensuring seamless functionality on both iOS and Android, while managing scalable cloud infrastructure using Firebase and Google Cloud."
+        ],
+        "links": {
+          "github": "https://github.com/ZhiXin18/flowmotion",
+          "writeup": "https://mrzzy.co/work/flowmotion-real-time-routing-for-sg-drivers"
+        }
+      },
+      {
+        "name": "Providence",
+        "timeframe": "Nov 2023 - Nov 2024",
+        "achievements": [
+          "Designed and automated a robust ELT pipeline that integrates personal finance data from multiple sources, enabling data-driven insights and informed budgeting decisions.",
+          "Optimized cloud architecture by migrating to DuckDB, reducing data storage and query costs while enhancing query performance, ensuring scalability with a low operational overhead.",
+          "Built a dynamic financial dashboard using Apache Superset, providing real-time insights into spending trends and financial health with a user-friendly interface for personal finance management."
+        ],
+        "links": {
+          "github": "https://github.com/mrzzy/providence",
+          "writeup": "https://mrzzy.co/work/providence-data-engineering-personal-finance"
+        }
+      }
+    ]
+  },
+  "studies": {
+    "title": "Education",
+    "institutions": [
+      {
+        "name": "Nanyang Technological University",
+        "timeframe": "Aug 2023 - Present",
+        "qualification": "Bachelor of Computing in Computer Science"
+      },
+      {
+        "name": "Ngee Ann Polytechnic",
+        "timeframe": "Apr 2018 - Apr 2021",
+        "qualification": "Diploma in Information Technology"
+      }
+    ]
+  },
+  "skills": {
+    "title": "Skills",
+    "skillsets": [
+      {
+        "name": "Backend Development",
+        "skills": "Python, SQL, Java, JavaScript, TypeScript, Node.js, Golang"
+      },
+      {
+        "name": "Cloud Computing / DevOps",
+        "skills": "GCP, Firebase, AWS, Terraform, Docker, Ansible, Packer, Kubernetes, CI/CD, Github Actions"
+      },
+      {
+        "name": "Data Engineering",
+        "skills": "PostgreSQL, Redis, BigQuery, Grafana, DBT, Prefect, Spark, DuckDB, Firestore, Data Modeling, Data Warehousing"
+      },
+      {
+        "name": "Other",
+        "skills": "Linux, Cloud Infrastructure, Data Analytics"
+      }
+    ]
+  }
+}

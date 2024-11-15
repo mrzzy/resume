@@ -5,10 +5,7 @@
 
 name: Build Resume PDF & PNG Preview
 on:
-  push:
-    paths:
-      - Tectonic.toml
-      - "src/*"
+  push: {}
 env:
   # sed pattern: strip ref prefix (eg. 'feat/') if any and replace filename unfriendly characters
   REF_SUFFIX_PATTERN: "s|[-_[:alpha:]]+/||g; s|[/-]|_|g"
@@ -31,9 +28,11 @@ jobs:
         path: ~/.cache/Tectonic
         key: tectonic-${{ hashFiles('**/*.tex') }}
         restore-keys: tectonic-
+    - name: Install Pip modules
+      run: pip install -r requirements.txt
     - name: Build Resume PDF
       run: |
-        tectonic -X build
+        make build
     - name: Derive Resume filename
       id: filename
       run: |
