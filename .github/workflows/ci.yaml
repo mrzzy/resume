@@ -76,7 +76,7 @@ jobs:
       - name: Copy Resume PDF
         run: |
           REF_SUFFIX=$(printf ${{ github.ref_name }} | sed -Ee "${REF_SUFFIX_PATTERN}")
-          cp  *.pdf/*.pdf -t "assets/pdfs/${REF_SUFFIX}-1.pdf"
+          cp  *.pdf/*.pdf "assets/pdfs/${REF_SUFFIX}-1.pdf"
       - name: Push Resume to Github Pages
         uses: stefanzweifel/git-auto-commit-action@v4.16.0
         with:
