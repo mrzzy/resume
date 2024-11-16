@@ -43,7 +43,7 @@ jobs:
         mv build/resume/resume.pdf "${RESUME_PDF}"
         echo "resume_pdf=${RESUME_PDF}" >> "$GITHUB_OUTPUT"
     - name: Upload built PDF as Github Actions Artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: "${{ steps.filename.outputs.resume_pdf }}"
         path: "${{ steps.filename.outputs.resume_pdf }}"
