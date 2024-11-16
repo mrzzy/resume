@@ -74,28 +74,32 @@ jobs:
           pdftoppm -png *.pdf/*.pdf "${REF_SUFFIX}"
           mv "${REF_SUFFIX}-1.png" -t assets/previews/
       - name: Copy Resume PDF
-        run: cp  *.pdf/*.pdf -t assets/pdfs/
+        run: |
+          REF_SUFFIX=$(printf ${{ github.ref_name }} | sed -Ee "${REF_SUFFIX_PATTERN}")
+          cp  *.pdf/*.pdf -t "assets/pdfs/${REF_SUFFIX}-1.pdf"
       - name: Push Resume to Github Pages
         uses: stefanzweifel/git-auto-commit-action@v4.16.0
         with:
           file_pattern: "assets/previews/*.png assets/pdfs/*.pdf"
           commit_message: "chore: add/update resume pdf & preview for ${{ github.ref }}"
 
-  update-readme-preview-url:
-    name: Update Resume Preview URL
+  update-resume-url:
+    name: Update Resume URL
     runs-on: ubuntu-22.04
     permissions:
       # needed for github-auto-commit-action to commit to repo.
       contents: write
     steps:
       - uses: actions/checkout@v3
-      - name: Update Preview URL on README 
+      - name: Update Preview & PDF URL on README 
         run: |
           set -ex -o pipefail
           REF_SUFFIX=$(printf ${{ github.ref_name }} | sed -Ee "${REF_SUFFIX_PATTERN}")
           # substitute image preview url with updated url based on current ref
           sed --in-place --regexp-extended \
             --expression="s|[^/]*-1\.png|${REF_SUFFIX}-1\.png|" README.md
+          sed --in-place --regexp-extended \
+            --expression="s|[^/]*-1\.pdf|${REF_SUFFIX}-1\.pdf|" README.md
       - name: Push updated README to repository
         uses: stefanzweifel/git-auto-commit-action@v4.16.0
         with:
@@ -110,4 +114,5 @@ jobs:
     - name: Install codespell with Pip
       run: pip install -r requirements.txt
     - name: Perform spellcheck with codespell
+
       run: codespell
