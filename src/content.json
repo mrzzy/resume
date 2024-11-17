@@ -78,15 +78,15 @@
     "title": "Skills",
     "skillsets": [
       {
-        "name": "Backend Development",
+        "name": "Backend",
         "skills": "Python, SQL, Java, JavaScript, TypeScript, Node.js, Golang"
       },
       {
-        "name": "Cloud Computing / DevOps",
+        "name": "Cloud",
         "skills": "GCP, Firebase, AWS, Terraform, Docker, Ansible, Packer, Kubernetes, CI/CD, Github Actions"
       },
       {
-        "name": "Data Engineering",
+        "name": "Data",
         "skills": "PostgreSQL, Redis, BigQuery, Grafana, DBT, Prefect, Spark, DuckDB, Firestore, Data Modeling, Data Warehousing"
       },
       {
