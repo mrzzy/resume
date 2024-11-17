@@ -1,0 +1,42 @@
+#
+# Resume
+# CI Pipeline
+# Sync mrzzy.co
+#
+
+name: Sync Revision of Resume Content mrzzy.co Site
+on:
+  push:
+    branches: [main]
+    paths:
+      - "src/content.json"
+jobs:
+  sync-pr:
+    name: Create Pull Request to Update Resume Content JSON URL on mrzzy.co
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Clone mrzzy.co repository
+        uses: actions/checkout@v4
+        with:
+          repository: mrzzy/mrzzy.co
+      - name: Update revision in Content JSON URL
+        run: |
+          sed -i -E -e "s|/mrzzy/resume/[0-9a-f]+/|/mrzzy/resume/${{ github.sha }}/|"  \
+            src/app/resources/mergeResume.tsx
+      - name: Create Pull Request on mrzzy.co
+        uses: peter-evans/create-pull-request@v5
+        with:
+          token: "${{ secrets.GH_PUSH_TOKEN }}"
+          # Commit
+          commit-message: "build: bump revision of resume content.json url in about page"
+          # Pull request
+          branch: build/update-resume-url
+          title: "build: bump revision of resume content.json url in about page"
+          body: "Update revision of Resume `content.json` URL to \
+            ${{ github.repository }}@${{ github.sha }}"
+          delete-branch: true
+
+      - name: Automerge Pull Request on mrzzy.co
+        env:
+          GH_TOKEN: "${{ secrets.GH_PUSH_TOKEN }}"
+        run: gh pr merge --squash --auto ${PULL_REQUEST_NUMBER}
