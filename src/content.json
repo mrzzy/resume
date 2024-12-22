@@ -1,43 +1,43 @@
 {
   "intro": {
-    "title": "Summary",
-    "description": "Results-driven Software Engineer and Computer Science undergraduate with a data engineering focus."
+    "title": "个人简介",
+    "description": "一名以数据工程为重点的计算机科学本科生，具备强大的软件工程背景，热衷于通过技术解决复杂问题，具有一定的机器学习经验和数据处理能力。"
   },
   "work": {
-    "title": "Experience",
+    "title": "工作经历",
     "experiences": [
       {
         "company": "Gojek",
-        "timeframe": "Mar 2020 - Oct 2020",
-        "role": "Machine Learning Engineer Intern",
+        "timeframe": "2020年3月 - 2020年10月",
+        "role": "机器学习工程师实习生",
         "achievements": [
-          "Engineered an open-source Machine Learning (ML) Feature Store for Gojek's driver-customer matchmaking model, enhancing data processing efficiency using Python, Java, Golang, Kafka, and Redis.",
-          "Resolved critical production issue by correcting Redis storage schema mismatch, ensuring uninterrupted matchmaking model performance.",
-          "Designed and deployed a comprehensive analytics dashboard using Grafana and GCP BigQuery, empowering management with real-time insights for data-driven decision-making."
+          "为Gojek的司机-乘客匹配模型构建了一个开源机器学习特征库，提升了数据处理效率，使用了Python、Java、Golang、Kafka和Redis等技术。",
+          "解决了一个关键的生产问题，通过修正Redis存储架构不匹配，确保了匹配模型的稳定运行。",
+          "使用Grafana和GCP BigQuery设计并部署了一个综合的分析仪表板，帮助管理层获得实时数据洞察，支持数据驱动决策。"
         ]
       },
       {
         "company": "Tinkertanker",
-        "timeframe": "Jan 2018 - Apr 2018",
-        "role": "Software Engineer Intern",
+        "timeframe": "2018年1月 - 2018年4月",
+        "role": "软件工程师实习生",
         "achievements": [
-          "Revamped a legacy instructor-course allocation system using Python, Django, and PostgreSQL, significantly improving performance and reliability over the previous Google Sheets-based solution.",
-          "Developed a responsive User Interface (UI) with Jinja, HTML, and JavaScript, enhancing the user experience for a seamless interaction with the system.",
-          "Implemented best practices such as comprehensive testing, documentation, and continuous integration via Github Actions, extending the project's lifecycle for over 5 years."
+          "通过使用Python、Django和PostgreSQL，重构了一个传统的讲师-课程分配系统，极大地提升了系统的性能和可靠性，取代了之前基于Google Sheets的方案。",
+          "使用Jinja、HTML和JavaScript开发了响应式用户界面，优化了用户体验，提升了系统的可操作性。",
+          "实现了最佳开发实践，包括全面的测试、文档编写和通过Github Actions进行的持续集成，延长了项目生命周期超过5年。"
         ]
       }
     ]
   },
   "projects": {
-    "title": "Projects",
+    "title": "项目经验",
     "projects": [
       {
         "name": "Flowmotion",
-        "timeframe": "Sep 2024 - Nov 2024",
+        "timeframe": "2024年9月 - 2024年11月",
         "achievements": [
-          "Engineered a real-time traffic congestion routing app that leverages live camera feeds and machine learning to deliver optimized routes for Singaporean drivers, improving commute efficiency.",
-          "Integrated a custom YOLOv8-based machine learning model to analyze traffic congestion, delivering real-time insights for route optimization using the OSRM API.",
-          "Developed a cross-platform mobile application with Flutter, ensuring seamless functionality on both iOS and Android, while managing scalable cloud infrastructure using Firebase and Google Cloud."
+          "开发了一个实时交通拥堵路由应用，利用实时摄像头数据和机器学习优化新加坡司机的行驶路线，提高通勤效率。",
+          "集成了一个自定义的基于YOLOv8的机器学习模型来分析交通拥堵，结合OSRM API为用户提供实时路线优化。",
+          "使用Flutter开发了跨平台移动应用，确保在iOS和Android上无缝运行，同时通过Firebase和Google Cloud管理可扩展的云基础设施。"
         ],
         "links": {
           "github": "https://github.com/ZhiXin18/flowmotion",
@@ -46,11 +46,11 @@
       },
       {
         "name": "Providence",
-        "timeframe": "Nov 2023 - Nov 2024",
+        "timeframe": "2023年11月 - 2024年11月",
         "achievements": [
-          "Designed and automated a robust ELT pipeline that integrates personal finance data from multiple sources, enabling data-driven insights and informed budgeting decisions.",
-          "Optimized cloud architecture by migrating to DuckDB, reducing data storage and query costs while enhancing query performance, ensuring scalability with a low operational overhead.",
-          "Built a dynamic financial dashboard using Apache Superset, providing real-time insights into spending trends and financial health with a user-friendly interface for personal finance management."
+          "设计并自动化了一个强大的ELT管道，将多个来源的个人财务数据进行整合，提供数据驱动的财务洞察，帮助用户做出更明智的预算决策。",
+          "通过迁移到DuckDB优化了云架构，降低了数据存储和查询成本，同时提升了查询性能，确保了系统可扩展且运维成本低。",
+          "使用Apache Superset构建了一个动态财务仪表盘，为用户提供关于消费趋势和财务健康的实时洞察，并提供了友好的界面来进行个人财务管理。"
         ],
         "links": {
           "github": "https://github.com/mrzzy/providence",
@@ -60,38 +60,42 @@
     ]
   },
   "studies": {
-    "title": "Education",
+    "title": "教育背景",
     "institutions": [
       {
-        "name": "Nanyang Technological University",
-        "timeframe": "Aug 2023 - Present",
-        "qualification": "Bachelor of Computing in Computer Science"
+        "name": "南洋理工大学",
+        "timeframe": "2023年8月 - 至今",
+        "qualification": "计算机科学 本科"
       },
       {
-        "name": "Ngee Ann Polytechnic",
-        "timeframe": "Apr 2018 - Apr 2021",
-        "qualification": "Diploma in Information Technology"
+        "name": "义安理工学院",
+        "timeframe": "2018年4月 - 2021年4月",
+        "qualification": "信息技术 大专"
       }
     ]
   },
   "skills": {
-    "title": "Skills",
+    "title": "技能掌握",
     "skillsets": [
       {
-        "name": "Backend",
+        "name": "后端技术",
         "skills": "Python, SQL, Java, JavaScript, TypeScript, Node.js, Golang"
       },
       {
-        "name": "Cloud",
+        "name": "云计算",
         "skills": "GCP, Firebase, AWS, Terraform, Docker, Ansible, Packer, Kubernetes, CI/CD, Github Actions"
       },
       {
-        "name": "Data",
-        "skills": "PostgreSQL, Redis, BigQuery, Grafana, DBT, Prefect, Spark, DuckDB, Firestore, Data Modeling, Data Warehousing"
+        "name": "数据工程",
+        "skills": "PostgreSQL, Redis, BigQuery, Grafana, DBT, Prefect, Spark, DuckDB, Firestore, 数据建模, 数据仓库"
       },
       {
-        "name": "Other",
-        "skills": "Linux, Cloud Infrastructure, Data Analytics"
+        "name": "其他",
+        "skills": "Linux, 云基础设施, 数据分析"
+      },
+      {
+        "name": "软技能",
+        "skills": "具备出色的分析和解决问题能力，能够从复杂问题中提取关键点并提出创新的解决方案；勤奋踏实，能够在压力下持续高效工作；具有良好的团队合作精神，善于与不同背景的团队成员协作，共同推动项目的成功；良好的自学能力，能够迅速适应新技术和工具，并将其应用于实际项目中；积极乐观，具备强烈的责任感和良好的沟通能力。"
       }
     ]
   }
