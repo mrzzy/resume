@@ -17,6 +17,10 @@ jobs:
       resume_pdf: "${{ steps.filename.outputs.resume_pdf }}"
     steps:
     - uses: actions/checkout@v3
+    - name: Install Noto Sans CJK to Render Chinese
+      run: |
+        set -ex -o pipefail
+        sudo apt-get install -y fonts-noto-cjk
     - uses: WtfJoke/setup-tectonic@v2.1.0
       with:
         # needed for querying tectonic releases from github
@@ -68,7 +72,7 @@ jobs:
         run: |
           set -ex -o pipefail
           # install pdftoppm
-          sudo apt-get install poppler-utils 
+          sudo apt-get install -y poppler-utils 
           # generate png preview
           REF_SUFFIX=$(printf ${{ github.ref_name }} | sed -Ee "${REF_SUFFIX_PATTERN}")
           pdftoppm -png *.pdf/*.pdf "${REF_SUFFIX}"
