@@ -1,7 +1,7 @@
 {
   "intro": {
     "title": "Summary",
-    "description": "Results-driven Software Engineer and Computer Science undergraduate with a data engineering focus."
+    "description": "Results-driven Software Engineer and Computer Science undergraduate with a strong focus on data engineering. Experienced in building scalable data pipelines, optimizing cloud infrastructure, and implementing DevOps practices to enhance data-driven decision-making."
   },
   "work": {
     "title": "Experience",
@@ -11,9 +11,9 @@
         "timeframe": "Mar 2020 - Oct 2020",
         "role": "Machine Learning Engineer Intern",
         "achievements": [
-          "Engineered an open-source Machine Learning (ML) Feature Store for Gojek's driver-customer matchmaking model, enhancing data processing efficiency using Python, Java, Golang, Kafka, and Redis.",
-          "Resolved critical production issue by correcting Redis storage schema mismatch, ensuring uninterrupted matchmaking model performance.",
-          "Designed and deployed a comprehensive analytics dashboard using Grafana and GCP BigQuery, empowering management with real-time insights for data-driven decision-making."
+          "Developed an open-source ML Feature Store, optimizing data processing efficiency for real-time matchmaking models using Python, Java, Golang, Kafka, and Redis.",
+          "Resolved a Redis schema mismatch in production, ensuring seamless data ingestion and preventing system downtime.",
+          "Designed and deployed a real-time analytics dashboard with Grafana and GCP BigQuery, enhancing data visibility for stakeholders."
         ]
       },
       {
@@ -21,9 +21,9 @@
         "timeframe": "Jan 2018 - Apr 2018",
         "role": "Software Engineer Intern",
         "achievements": [
-          "Revamped a legacy instructor-course allocation system using Python, Django, and PostgreSQL, significantly improving performance and reliability over the previous Google Sheets-based solution.",
-          "Developed a responsive User Interface (UI) with Jinja, HTML, and JavaScript, enhancing the user experience for a seamless interaction with the system.",
-          "Implemented best practices such as comprehensive testing, documentation, and continuous integration via Github Actions, extending the project's lifecycle for over 5 years."
+          "Engineered a robust instructor-course allocation system using Python, Django, and PostgreSQL, replacing a manual spreadsheet-based process and improving efficiency.",
+          "Developed a responsive UI with Jinja, HTML, and JavaScript, enhancing usability and accessibility.",
+          "Implemented CI/CD pipelines with GitHub Actions, improving deployment automation and system reliability."
         ]
       }
     ]
@@ -35,9 +35,9 @@
         "name": "Flowmotion",
         "timeframe": "Sep 2024 - Nov 2024",
         "achievements": [
-          "Engineered a real-time traffic congestion routing app that leverages live camera feeds and machine learning to deliver optimized routes for Singaporean drivers, improving commute efficiency.",
-          "Integrated a custom YOLOv8-based machine learning model to analyze traffic congestion, delivering real-time insights for route optimization using the OSRM API.",
-          "Developed a cross-platform mobile application with Flutter, ensuring seamless functionality on both iOS and Android, while managing scalable cloud infrastructure using Firebase and Google Cloud."
+          "Built a real-time traffic congestion routing app leveraging live camera feeds and machine learning to optimize route recommendations.",
+          "Integrated a YOLOv8-based ML model for congestion analysis and real-time route optimization via the OSRM API.",
+          "Developed a cross-platform mobile app with Flutter, managing cloud infrastructure using Firebase and Google Cloud for scalable deployment."
         ],
         "links": {
           "github": "https://github.com/ZhiXin18/flowmotion",
@@ -48,9 +48,9 @@
         "name": "Providence",
         "timeframe": "Nov 2023 - Nov 2024",
         "achievements": [
-          "Designed and automated a robust ELT pipeline that integrates personal finance data from multiple sources, enabling data-driven insights and informed budgeting decisions.",
-          "Optimized cloud architecture by migrating to DuckDB, reducing data storage and query costs while enhancing query performance, ensuring scalability with a low operational overhead.",
-          "Built a dynamic financial dashboard using Apache Superset, providing real-time insights into spending trends and financial health with a user-friendly interface for personal finance management."
+          "Designed and automated an ELT pipeline integrating multi-source personal finance data, enhancing budgeting insights.",
+          "Optimized cloud architecture by migrating to DuckDB, reducing query costs and improving data retrieval speeds.",
+          "Developed an interactive financial dashboard using Apache Superset, enabling real-time data visualization and decision-making."
         ],
         "links": {
           "github": "https://github.com/mrzzy/providence",
@@ -78,20 +78,20 @@
     "title": "Skills",
     "skillsets": [
       {
-        "name": "Backend",
-        "skills": "Python, SQL, Java, JavaScript, TypeScript, Node.js, Golang"
+        "name": "Data Engineering",
+        "skills": "Python, SQL, Spark, DBT, Prefect, Data Modeling, Data Warehousing, ETL Pipelines, Data Contracts"
       },
       {
-        "name": "Cloud",
-        "skills": "GCP, Firebase, AWS, Terraform, Docker, Ansible, Packer, Kubernetes, CI/CD, Github Actions"
+        "name": "Cloud Infrastructure",
+        "skills": "GCP, AWS, Terraform, Docker, Kubernetes, CI/CD, GitHub Actions, Infrastructure-as-Code (IaC)"
       },
       {
-        "name": "Data",
-        "skills": "PostgreSQL, Redis, BigQuery, Grafana, DBT, Prefect, Spark, DuckDB, Firestore, Data Modeling, Data Warehousing"
+        "name": "Databases / Analytics",
+        "skills": "PostgreSQL, Redis, BigQuery, DuckDB, Firestore, Data Monitoring, Apache Superset, Grafana"
       },
       {
-        "name": "Other",
-        "skills": "Linux, Cloud Infrastructure, Data Analytics"
+        "name": "Software Engineering / DevOps",
+        "skills": "Java, Golang, TypeScript, Node.js, API Development, Version Control (Git), Unit Testing, Agile, Scrum"
       }
     ]
   }
