@@ -32,7 +32,7 @@ $(PDF_RAW): $(INDEX_TEX)
 
 # Rewrite the resume PDF with libreoffice for better compatibility
 $(PDF): $(PDF_RAW)
-	$(DOCKER) run -it -v $(shell pwd):/work lscr.io/linuxserver/libreoffice bash /work/rewrite.sh
+	$(DOCKER) run -v $(shell pwd):/work lscr.io/linuxserver/libreoffice bash /work/rewrite.sh
 	
 clean:
 	$(RM) -rf build
