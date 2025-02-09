@@ -22,8 +22,11 @@ RM = rm
 build: $(PDF)
 
 # Target to generate the index.tex file from the template
+# escape & as \& as '&" is a special character in resume
+# skip first 11 lines as header tex relies on unescaped '&' character
+N_ESCAPE= 12
 $(INDEX_TEX): $(TEMPLATE) $(CONTENT)
-	$(JINJA2) $(TEMPLATE) $(CONTENT) > $(INDEX_TEX)
+	$(JINJA2) $(TEMPLATE) $(CONTENT) | sed '$(N_ESCAPE),$$s/&/\\&/g' > $(INDEX_TEX)
 
 # Target to build the LaTeX document into PDF using Tectonic
 $(PDF_RAW): $(INDEX_TEX)
