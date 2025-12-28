@@ -7,6 +7,17 @@
     "title": "Experience",
     "experiences": [
       {
+        "company": "Inland Revenue Authority of Singapore (IRAS)",
+        "timeframe": "Jun 2025 - Jan 2026",
+        "role": "Data Engineer Intern",
+        "achievements": [
+          "Modernized refund risk data workflows by converting legacy SAS processing logic to SQL, streamlining the organization’s data stack and improving maintainability.",
+          "Designed and implemented a Jinja-based transpiler enabling shared data processing logic to run seamlessly on both Spark and SQLite, supporting tailored training and inference needs.",
+          "Architected a multi-stage data pipeline with Kedro, Azure ML, and Azure Synapse to build a LanceDB vector database for an internal Retrieval-Augmented Generation (RAG) application, enhancing data accessibility and performance.",
+          "Automated vector database refresh processes, eliminating manual operations and saving engineering hours, enabling faster and more reliable data updates."
+        ]
+      },
+      {
         "company": "Gojek",
         "timeframe": "Mar 2020 - Oct 2020",
         "role": "Machine Learning Engineer Intern",
@@ -14,16 +25,6 @@
           "Engineered an open-source Machine Learning (ML) Feature Store for Gojek's driver-customer matchmaking model, enhancing data processing efficiency using Python, Java, Golang, Kafka, and Redis.",
           "Resolved critical production issue by correcting Redis storage schema mismatch, ensuring uninterrupted matchmaking model performance.",
           "Designed and deployed a comprehensive analytics dashboard using Grafana and GCP BigQuery, empowering management with real-time insights for data-driven decision-making."
-        ]
-      },
-      {
-        "company": "Tinkertanker",
-        "timeframe": "Jan 2018 - Apr 2018",
-        "role": "Software Engineer Intern",
-        "achievements": [
-          "Revamped a legacy instructor-course allocation system using Python, Django, and PostgreSQL, significantly improving performance and reliability over the previous Google Sheets-based solution.",
-          "Developed a responsive User Interface (UI) with Jinja, HTML, and JavaScript, enhancing the user experience for a seamless interaction with the system.",
-          "Implemented best practices such as comprehensive testing, documentation, and continuous integration via Github Actions, extending the project's lifecycle for over 5 years."
         ]
       }
     ]
@@ -64,7 +65,7 @@
     "institutions": [
       {
         "name": "Nanyang Technological University",
-        "timeframe": "Aug 2023 - Present",
+        "timeframe": "Aug 2023 - Dec 2027",
         "qualification": "Bachelor of Computing in Computer Science"
       },
       {
@@ -79,11 +80,11 @@
     "skillsets": [
       {
         "name": "Backend",
-        "skills": "Python, SQL, Java, JavaScript, TypeScript, Node.js, Golang"
+        "skills": "Python, SQL, Java, JavaScript, TypeScript, Node.js, Golang, Django, Jinja"
       },
       {
         "name": "Cloud",
-        "skills": "GCP, Firebase, AWS, Terraform, Docker, Ansible, Packer, Kubernetes, CI/CD, Github Actions"
+        "skills": "GCP, Firebase, AWS, Azure, Terraform, Docker, Ansible, Packer, Kubernetes, CI/CD, Github Actions"
       },
       {
         "name": "Data",
