@@ -22,7 +22,7 @@ jobs:
       - name: Update revision in Content JSON URL
         run: |
           sed -i -E -e "s|/mrzzy/resume/[0-9a-f]+/|/mrzzy/resume/${{ github.sha }}/|"  \
-            src/app/resources/mergeResume.tsx
+            src/resources/mergeResume.tsx
       - name: Create Pull Request on mrzzy.co
         uses: peter-evans/create-pull-request@v5
         with:
