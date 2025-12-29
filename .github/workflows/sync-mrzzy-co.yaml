@@ -9,7 +9,8 @@ on:
   push:
     branches: [main]
     paths:
-      - "src/content.json"
+      - src/content.json
+      - .github/workflows/sync-mrzzy-co.yaml
 jobs:
   sync-pr:
     name: Create Pull Request to Update Resume Content JSON URL on mrzzy.co
