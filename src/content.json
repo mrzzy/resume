@@ -1,7 +1,7 @@
 {
   "intro": {
     "title": "Summary",
-    "description": "Results-driven Software Engineer and Computer Science undergraduate with a data engineering focus."
+    "description": "Results-driven Software Engineer with a focus on Generative AI and Data Engineering"
   },
   "work": {
     "title": "Experience",
@@ -11,10 +11,10 @@
         "timeframe": "Jun 2025 - Jan 2026",
         "role": "Data Engineer Intern",
         "achievements": [
-          "Modernized refund risk data workflows by converting legacy SAS processing logic to SQL, streamlining the organization’s data stack and improving maintainability.",
+          "Modernized refund risk data workflows by converting legacy SAS processing logic to SQL. Streamlined the organization’s data stack and improved maintainability.",
           "Designed and implemented a Jinja-based transpiler enabling shared data processing logic to run seamlessly on both Spark and SQLite, supporting tailored training and inference needs.",
           "Architected a multi-stage data pipeline with Kedro, Azure ML, and Azure Synapse to build a LanceDB vector database for an internal Retrieval-Augmented Generation (RAG) application, enhancing data accessibility and performance.",
-          "Automated vector database refresh processes, eliminating manual operations and saving engineering hours, enabling faster and more reliable data updates."
+          "Automated manual vector database refresh processes, eliminating manual operations and reducing engineering effort, enabling faster and more reliable data updates."
         ]
       },
       {
@@ -87,12 +87,12 @@
         "skills": "GCP, Firebase, AWS, Azure, Terraform, Docker, Ansible, Packer, Kubernetes, CI/CD, Github Actions"
       },
       {
-        "name": "Data",
-        "skills": "PostgreSQL, Redis, BigQuery, Grafana, DBT, Prefect, Spark, DuckDB, Firestore, Data Modeling, Data Warehousing"
+        "name": "Data Engineering",
+        "skills": "PostgreSQL, Redis, BigQuery, Grafana, DBT, Prefect, Spark, DuckDB, Firestore, Kedro, LangChain, LanceDB, Data Modeling, Data Warehousing, ELT Pipelines, RAG Pipelines"
       },
       {
         "name": "Other",
-        "skills": "Linux, Cloud Infrastructure, Data Analytics"
+        "skills": "Linux, Data Analytics"
       }
     ]
   }
