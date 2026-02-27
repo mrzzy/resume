@@ -33,6 +33,19 @@
     "title": "Projects",
     "projects": [
       {
+        "name": "B+Tree Database in C++",
+        "timeframe": "Feb 2025- Mar 2025",
+        "achievements": [
+          "Built a disk-backed B+Tree database in C++ with columnar storage and filesystem block-aligned I/O.",
+          "Implemented bulk-loaded B+Tree indexing to support efficient range-based aggregation queries",
+          "Achieved ~7x faster queries (1935µs -> 276µs) and 87\\% fewer data block reads using index scan vs. brute force scan."
+        ],
+        "links": {
+          "github": "https://github.com/mrzzy/ntu-sc3020/commits/main/project1",
+          "writeup": "https://www.mrzzy.co/work/implementing-btree-database-in-cpp"
+        }
+      },
+      {
         "name": "Flowmotion",
         "timeframe": "Sep 2024 - Nov 2024",
         "achievements": [
@@ -43,19 +56,6 @@
         "links": {
           "github": "https://github.com/ZhiXin18/flowmotion",
           "writeup": "https://mrzzy.co/work/flowmotion-real-time-routing-for-sg-drivers"
-        }
-      },
-      {
-        "name": "Providence",
-        "timeframe": "Nov 2023 - Nov 2024",
-        "achievements": [
-          "Designed and automated a robust ELT pipeline that integrates personal finance data from multiple sources, enabling data-driven insights and informed budgeting decisions.",
-          "Optimized cloud architecture by migrating to DuckDB, reducing data storage and query costs while enhancing query performance, ensuring scalability with a low operational overhead.",
-          "Built a dynamic financial dashboard using Apache Superset, providing real-time insights into spending trends and financial health with a user-friendly interface for personal finance management."
-        ],
-        "links": {
-          "github": "https://github.com/mrzzy/providence",
-          "writeup": "https://mrzzy.co/work/providence-data-engineering-personal-finance"
         }
       }
     ]
