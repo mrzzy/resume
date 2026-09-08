@@ -25,6 +25,7 @@ jobs:
           sed -i -E -e "s|/mrzzy/resume/[0-9a-f]+/|/mrzzy/resume/${{ github.sha }}/|"  \
             src/resources/mergeResume.tsx
       - name: Create Pull Request on mrzzy.co
+        id: create-pr
         uses: peter-evans/create-pull-request@v8.1.1
         with:
           token: "${{ secrets.GH_PUSH_TOKEN }}"
@@ -40,4 +41,4 @@ jobs:
       - name: Automerge Pull Request on mrzzy.co
         env:
           GH_TOKEN: "${{ secrets.GH_PUSH_TOKEN }}"
-        run: gh pr merge --squash --auto ${PULL_REQUEST_NUMBER}
+        run: gh pr merge --squash --auto ${{ steps.create-pr.outputs.pull-request-number }}
