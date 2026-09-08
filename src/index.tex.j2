@@ -55,6 +55,14 @@
     {% endfor %}
   \resumeSubHeadingListEnd
 
+%--------AWARDS------------
+\section{{"{" + awards.title + "}"}}
+ \resumeSubHeadingListStart
+   {% for award in awards.awards %}
+     \resumeSubItem{{"{" + award.name + "}"}}{{"{" + award.description + "}"}}
+    {% endfor %}
+ \resumeSubHeadingListEnd
+
 %--------SKILLS------------
 \section{{"{" + skills.title + "}"}}
  \resumeSubHeadingListStart

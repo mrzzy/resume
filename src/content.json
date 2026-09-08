@@ -11,10 +11,10 @@
         "timeframe": "Jun 2025 - Jan 2026",
         "role": "Data Engineer Intern",
         "achievements": [
-          "Modernized refund risk data workflows by converting legacy SAS processing logic to SQL. Streamlined the organization’s data stack and improved maintainability.",
-          "Designed and implemented a Jinja-based transpiler enabling shared data processing logic to run seamlessly on both Spark and SQLite, supporting tailored training and inference needs.",
-          "Architected a multi-stage data pipeline with Kedro, Azure ML, and Azure Synapse to build a LanceDB vector database for an internal Retrieval-Augmented Generation (RAG) application, enhancing data accessibility and performance.",
-          "Automated manual vector database refresh processes, eliminating manual operations and reducing engineering effort, enabling faster and more reliable data updates."
+          "Migrated legacy SAS refund-risk processing logic to SQL, modernising data workflows and improving maintainability of production pipelines.",
+          "Built a Jinja-based SQL transpiler enabling shared processing logic to execute across Spark and SQLite for distributed training and local inference workloads.",
+          "Architected a Kedro pipeline integrating Azure ML and Azure Synapse to construct and refresh a LanceDB vector database for an internal Retrieval-Augmented Generation (RAG) application.",
+          "Automated vector database refreshes with scheduled pipelines, eliminating manual operations and enabling reliable, repeatable data updates."
         ]
       },
       {
@@ -33,29 +33,29 @@
     "title": "Projects",
     "projects": [
       {
+        "name": "Broche: AI-Assisted Drawing App",
+        "timeframe": "Aug 2025- Apr 2026",
+        "achievements": [
+          "Engineered an iPad AI-assisted drawing app that allows artists to co-create with AI image generation.",
+          "Developed a tool-calling Sketch Agent that automously calls AI rendering, editing features.",
+          "Optimised UI rendering with caching in hot path, reducing and drawing rendering time by 4.58×."
+        ],
+        "links": {
+          "github": "https://github.com/mrzzy/ntu-fyp",
+          "writeup": "https://www.mrzzy.co/work/augmenting-rather-replacing-artists-gen-ai"
+        }
+      },
+      {
         "name": "B+Tree Database in C++",
         "timeframe": "Feb 2025- Mar 2025",
         "achievements": [
           "Built a disk-backed B+Tree database in C++ with columnar storage and filesystem block-aligned I/O.",
-          "Implemented bulk-loaded B+Tree indexing to support efficient range-based aggregation queries",
-          "Achieved ~7x faster queries (1935µs -> 276µs) and 87\\% fewer data block reads using index scan vs. brute force scan."
+          "Implemented bulk-loaded B+Tree indexing to support efficient range-based aggregation queries.",
+          "Achieved 7x faster queries and 87% fewer data block reads using index scan vs. brute force scan."
         ],
         "links": {
           "github": "https://github.com/mrzzy/ntu-sc3020/commits/main/project1",
           "writeup": "https://www.mrzzy.co/work/implementing-btree-database-in-cpp"
-        }
-      },
-      {
-        "name": "Flowmotion",
-        "timeframe": "Sep 2024 - Nov 2024",
-        "achievements": [
-          "Engineered a real-time traffic congestion routing app that leverages live camera feeds and machine learning to deliver optimized routes for Singaporean drivers, improving commute efficiency.",
-          "Integrated a custom YOLOv8-based machine learning model to analyze traffic congestion, delivering real-time insights for route optimization using the OSRM API.",
-          "Developed a cross-platform mobile application with Flutter, ensuring seamless functionality on both iOS and Android, while managing scalable cloud infrastructure using Firebase and Google Cloud."
-        ],
-        "links": {
-          "github": "https://github.com/ZhiXin18/flowmotion",
-          "writeup": "https://mrzzy.co/work/flowmotion-real-time-routing-for-sg-drivers"
         }
       }
     ]
@@ -75,12 +75,21 @@
       }
     ]
   },
+  "awards": {
+    "title": "Awards",
+    "awards": [
+      {
+        "name": "ISC26 Student Cluster Competition",
+        "description": "Team placed joint 1st in international HPC Competition. Worked on HPL, HPCG and power management."
+      }
+    ]
+  },
   "skills": {
     "title": "Skills",
     "skillsets": [
       {
         "name": "Backend",
-        "skills": "Python, SQL, Java, JavaScript, TypeScript, Node.js, Golang, Django, Jinja"
+        "skills": "Python, SQL, Java, JavaScript, TypeScript, Node.js, Golang, Django, Jinja, Rust"
       },
       {
         "name": "Cloud",
@@ -88,7 +97,11 @@
       },
       {
         "name": "Data Engineering",
-        "skills": "PostgreSQL, Redis, BigQuery, Grafana, DBT, Prefect, Spark, DuckDB, Firestore, Kedro, LangChain, LanceDB, Data Modeling, Data Warehousing, ELT Pipelines, RAG Pipelines"
+        "skills": "PostgreSQL, Redis, BigQuery, Grafana, DBT, Prefect, Spark, DuckDB, Firestore, Kedro, Data Modeling, Data Warehousing, ELT Pipelines"
+      },
+      {
+        "name": "AI Engineering",
+        "skills": "LangChain, LanceDB, AI Agent, RAG Pipelines, LLM, VLM, Diffusion"
       },
       {
         "name": "Other",
