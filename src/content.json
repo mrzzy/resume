@@ -1,7 +1,7 @@
 {
   "intro": {
     "title": "Summary",
-    "description": "Results-driven Software Engineer with a focus on Generative AI and Data Engineering."
+    "description": "Results-driven Software Engineer with a strong foundation in Data Engineering and Artificial Intellegence applications."
   },
   "work": {
     "title": "Experience",
@@ -51,7 +51,7 @@
         "achievements": [
           "Built a disk-backed B+Tree database in C++ with columnar storage and filesystem block-aligned I/O.",
           "Implemented bulk-loaded B+Tree indexing to support efficient range-based aggregation queries.",
-          "Achieved 7x faster queries and 87% fewer data block reads using index scan vs. brute force scan."
+          "Achieved 7x faster queries and 87\\% fewer data block reads using index scan vs. brute force scan."
         ],
         "links": {
           "github": "https://github.com/mrzzy/ntu-sc3020/commits/main/project1",
@@ -93,7 +93,7 @@
       },
       {
         "name": "Cloud",
-        "skills": "GCP, Firebase, AWS, Azure, Terraform, Docker, Ansible, Packer, Kubernetes, CI/CD, Github Actions"
+        "skills": "GCP, Firebase, AWS, Azure, Terraform, Docker, Ansible, Linux, Kubernetes, CI/CD"
       },
       {
         "name": "Data Engineering",
@@ -102,10 +102,6 @@
       {
         "name": "AI Engineering",
         "skills": "LangChain, LanceDB, AI Agent, RAG Pipelines, LLM, VLM, Diffusion"
-      },
-      {
-        "name": "Other",
-        "skills": "Linux, Data Analytics"
       }
     ]
   }
