@@ -88,6 +88,10 @@
     "title": "Skills",
     "skillsets": [
       {
+        "name": "Frontend",
+        "skills": "Swift, Java, iOS, Android, React, Next.js, TailwindCSS, HTML, CSS"
+      },
+      {
         "name": "Backend",
         "skills": "Python, SQL, Java, JavaScript, TypeScript, Node.js, Golang, Django, Jinja, Rust"
       },
